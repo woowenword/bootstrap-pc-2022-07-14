@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+  <link href="assets/css/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <script src="assets/js/echarts.min.js"></script>
+  <script src="assets/js/jquery.js" type="text/javascript"></script>
+  <script src="assets/js/bootstrap.js" type="text/javascript"></script>
+  <style type="text/css">
+    .nav-self-style {
+      /* border: 1px solid #899; */
+    }
+
+    .nav-self-style li {
+      border: 1px solid #DCDFE6;
+    }
+
+    .nav-pills>li+li {
+      margin-left: 0;
+      border-left: 0;
+    }
+
+    .nav-self-style li a {
+      padding: 5px 19px;
+      color: #323232;
+    }
+
+    .nav-pills>li.active>a,
+    .nav-pills>li.active>a:hover,
+    .nav-pills>li.active>a:focus {
+      background: #EAF5FF;
+      color: #79C0FA;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 柱状图 -->
+  <section>
+    <!-- Nav tabs -->
+    <ul class="nav nav-pills nav-self-style" role="tablist">
+      <li role="presentation" class="active">
+        <a href="#week" aria-controls="week" role="tab" data-toggle="tab">本周</a>
+      </li>
+      <li role="presentation">
+        <a href="#month" aria-controls="month" role="tab" data-toggle="tab">本月</a>
+      </li>
+      <li role="presentation">
+        <a href="#year" aria-controls="year" role="tab" data-toggle="tab">今年</a>
+      </li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+      <div role="tabpanel" class="tab-pane active" id="week">
+        <div id="main" style="width: 600px;height:400px;"></div>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="month">
+        <div id="main2" style="width: 600px;height:400px;"></div>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="year">本年</div>
+    </div>
+  </section>
+
+  <!-- 饼图 -->
+  <section>
+    <!-- Nav tabs -->
+    <ul class="nav nav-pills nav-self-style" role="tablist">
+      <li role="presentation" class="active">
+        <a href="#week" aria-controls="week" role="tab" data-toggle="tab">本周</a>
+      </li>
+      <li role="presentation">
+        <a href="#month" aria-controls="month" role="tab" data-toggle="tab">本月</a>
+      </li>
+      <li role="presentation">
+        <a href="#year" aria-controls="year" role="tab" data-toggle="tab">今年</a>
+      </li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+      <div role="tabpanel" class="tab-pane active" id="week">
+        <div id="pieChart1" style="width: 600px;height:400px;"></div>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="month">
+        <div id="pieChart2" style="width: 600px;height:400px;"></div>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="year">
+        <div id="pieChart3" style="width: 600px;height:400px;"></div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- 进度条 -->
+  <section class="seat-work">
+    <div class="warp">
+      <ul class="media-list">
+        <li class="media">
+          <div class="media-left">
+            <img class="media-object img-circle" src="assets/images/icon1.png">
+          </div>
+          <div class="media-body">
+            <p class="media-heading">王某某</p>
+            <p>花无阻</p>
+          </div>
+        </li>
+      </ul>
+      <div class="progress">
+        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+          <span class="sr-only">40% Complete (success)</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="panel panel-default">
+      <!-- Default panel contents -->
+      <div class="panel-heading">Panel heading</div>
+      <div class="panel-body">
+        <p>...</p>
+      </div>
+    
+      <!-- Table -->
+      <table class="table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Username</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Larry</td>
+            <td>the Bird</td>
+            <td>@twitter</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <form class="form-inline">
+      <div class="form-group">
+        <label for="exampleInputName2">Name</label>
+        <input type="text" class="form-control" id="exampleInputName2" placeholder="Jane Doe">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail2">Email</label>
+        <input type="email" class="form-control" id="exampleInputEmail2" placeholder="jane.doe@example.com">
+      </div>
+      <button type="submit" class="btn btn-default">Send invitation</button>
+    </form>
+  </section>
+
+
+  <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="left"
+    title="Tooltip on left">Tooltip on left</button>
+
+  <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="top"
+    title="Tooltip on top">Tooltip on top</button>
+
+  <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom"
+    title="Tooltip on bottom">Tooltip on bottom</button>
+
+  <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="right"
+    title="Tooltip on right">Tooltip on right</button>
+
+    <div id="main3" style="width: 250px;height: 250px;"></div>
+
+  <script type="text/javascript">
+    // tooltip
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
+    })
+
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('main'));
+
+    var option = {
+      tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+          type: 'cross',
+          crossStyle: {
+            color: '#999'
+          }
+        }
+      },
+      // 图例样式
+      legend: {
+        data: [{
+            name: 'Evaporation',
+            icon: 'circle'
+          },
+          {
+            name: 'Precipitation',
+            icon: 'circle'
+          },
+          {
+            name: 'Temperature',
+            icon: 'circle'
+          }
+        ],
+        bottom: 10,
+        itemWidth: 10,
+      },
+      // x轴
+      xAxis: [{
+        type: 'category',
+        data: ['12-01', '12-02', '12-03', '12-04', '12-05', '12-06', '12-07', '12-08', '12-09', '12-10'],
+        axisPointer: {
+          type: 'shadow'
+        }
+      }],
+      // y轴
+      yAxis: [{
+          type: 'value',
+          name: 'Precipitation',
+          min: 0,
+          max: 250,
+          interval: 50,
+          axisLabel: {
+            formatter: '{value} ml'
+          }
+        },
+        {
+          type: 'value',
+          name: 'Temperature',
+          min: 0,
+          max: 25,
+          interval: 5,
+          axisLabel: {
+            formatter: '{value} °C'
+          }
+        }
+      ],
+      // 数据
+      series: [{
+          name: 'Evaporation',
+          type: 'bar',
+          tooltip: {
+            valueFormatter: function (value) {
+              return value + ' ml';
+            }
+          },
+          data: [
+            2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3
+          ],
+          itemStyle: {
+            color: '#3678FF'
+          }
+        },
+        {
+          name: 'Precipitation',
+          type: 'bar',
+          tooltip: {
+            valueFormatter: function (value) {
+              return value + ' ml';
+            }
+          },
+          data: [
+            2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3
+          ],
+          itemStyle: {
+            color: '#F39800'
+          }
+        },
+        {
+          name: 'Temperature',
+          type: 'line',
+          yAxisIndex: 1,
+          tooltip: {
+            valueFormatter: function (value) {
+              return value + ' °C';
+            }
+          },
+          data: [2.0, 2.2, 3.3, 4.5, 6.3, 10.2, 20.3, 23.4, 23.0, 16.5, 12.0, 6.2],
+          itemStyle: {
+            color: '#00C5BD'
+          }
+        }
+      ]
+    };
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+
+    // 基于准备好的dom，初始化echarts实例
+    var pieChart1 = echarts.init(document.getElementById('pieChart1'));
+    var data = [{
+        value: 335,
+        name: '人事工单',
+        itemStyle: { normal: { color: "#00C5BD" } }
+      },
+      {
+        value: 234,
+        name: '联盟广告',
+        itemStyle: { normal: { color: "#F39800" } }
+      },
+      {
+        value: 1548,
+        name: '搜索引擎', 
+        itemStyle: { normal: { color: "#3678FF" } }
+      }
+    ]
+    var pieOption1 = {
+      tooltip: {
+        trigger: 'item',
+        // formatter: "{a} <br/>{b} : {c} ({d}%)"
+      },
+
+      // 图例
+      legend: {
+        orient: 'vertical',
+        x: 'right',
+        data: [{
+            name: '人事工单',
+            icon: 'circle'
+          },
+          {
+            name: '联盟广告',
+            icon: 'circle'
+          },
+          {
+            name: '搜索引擎',
+            icon: 'circle'
+          }
+        ],
+        formatter: function (name) {
+          var total = 0;
+          var target;
+          for (var i = 0, l = data.length; i < l; i++) {
+            total += data[i].value;
+            if (data[i].name == name) {
+              target = data[i].value
+            }
+          }
+          return name + ' ' + ((target / total) * 100).toFixed(2) + '%';
+        }
+      },
+      // 环形中间title
+      title: {
+        text: '全部工单',
+        left: 'center',
+        top: 'center',
+      },
+      //数据
+      series: [{
+        type: 'pie',
+        label: {
+          show: false
+        },
+        data: data,
+        radius: ['40%', '70%']
+      }]
+    };
+    pieChart1.setOption(pieOption1);
+  </script>
+
+  <script>
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('main3'));
+    
+    // 指定图表的配置项和数据
+    option = {
+      title : {  //标题组件
+        text: '920',
+            textStyle:{
+              color: '#000',  //文字颜色
+              fontStyle: 'normal',  //字体风格：'normal','italic','oblique'
+              fontWeight: 'normal', //字体粗细 ：'normal','bold','bolder','lighter',100 | 200 | 300 | 400...
+              fontFamily: 'sans-serif',//字体系列： 'serif' , 'monospace', 'Arial', 'Courier New', 'Microsoft YaHei', ...
+      　　　　 	fontSize: 24, //字体大小
+          },
+            x:'center',
+            bottom:0,
+         },
+          tooltip: {
+              formatter: "{a} <br/>{b} : {c}%",
+          },
+          series: [
+              {
+                type: 'gauge',
+                name: '数据指标',
+                  radius: '100%',  //仪表盘半径，可以是相对于容器高宽中较小的一项的一半的百分比，也可以是绝对的数值
+                  axisLine: {      //仪表盘轴线相关配置
+                    show:true,
+                      lineStyle: {
+                          color: [  //仪表盘背景颜色渐变
+                          [1,new echarts.graphic.LinearGradient(0, 0, 1, 0, [
+                              {
+                                offset: 0.1,
+                                color: "#fd2100"
+                              },
+                              {
+                                offset: 0.6,
+                                color: "#d09f00"
+                              },
+                              {
+                                offset: 1,
+                                color: "#26fd00"
+                              }
+                          ])
+                        ]
+                      ],
+                          width:20,  //轴线宽度
+                      },
+                  },
+                  splitLine: {  //分隔线样式。
+                    show: false,
+                    interval:0,   //默认会采用标签不重叠的策略间隔显示标签。可以设置成 0 强制显示所有标签。
+                    lineStyle:{   //分割线样式
+                    
+                  }
+                },
+                  axisLabel: {  // 刻度标签
+                    show:true,
+                      color: '#000',
+                      fontSize:10,   //改变仪表盘内刻度数字的大小
+                      shadowColor : '#000', //默认透明
+                  },
+                  title: {	//仪表盘标题。
+                  show: true,				//是否显示标题,默认 true。
+                  offsetCenter: [0,"60%"],//相对于仪表盘中心的偏移位置，数组第一项是水平方向的偏移，第二项是垂直方向的偏移。可以是绝对的数值，也可以是相对于仪表盘半径的百分比。
+                        color: '#000',
+                        fontWeight: '100',
+                        fontSize: '18',
+                },
+                
+                detail: {				// 仪表盘详情，用于显示数据。
+                  show: true,				// 是否显示详情,默认 true。
+                  offsetCenter: [0,"35%"],// 相对于仪表盘中心的偏移位置，数组第一项是水平方向的偏移，第二项是垂直方向的偏移。可以是绝对的数值，也可以是相对于仪表盘半径的百分比。
+                        color: '#000',
+                        fontWeight: '700',
+                        fontSize: '20',
+                  formatter: "{value}%",	// 格式化函数或者字符串
+                },
+                  data: [{ value: 92, name: '指标' }],
+                  markPoint:{  //图表标注
+                          symbol:'circle', //'circle', 'rect', 'roundRect', 'triangle', 'diamond', 'pin', 'arrow', 'none'
+                          symbolSize:5,
+                          data:[
+                              //跟你的仪表盘的中心位置对应上，颜色可以和画板底色一样
+                              {x:'center',y:'center',itemStyle:{color:'#FFF'}}
+                          ]
+                      },
+              }
+          ]
+      };
+      
+      // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option, true);
+    </script>
+</body>
+
+</html>

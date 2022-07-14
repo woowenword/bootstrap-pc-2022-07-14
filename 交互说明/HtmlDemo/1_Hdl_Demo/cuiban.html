@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta charset="utf-8" />
+		<title>海底捞催办管理系统</title>
+
+		<meta name="description" content="" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+		<!-- bootstrap & fontawesome -->
+		<link rel="stylesheet" href="../assets/css/bootstrap.css" />
+		<link rel="stylesheet" href="../assets/css/font-awesome.css" />
+
+		<!-- page specific plugin styles -->
+
+		<!-- text fonts -->
+		<link rel="stylesheet" href="../assets/css/ace-fonts.css" />
+
+		<!-- ace styles -->
+		<link rel="stylesheet" href="../assets/css/ace.css" class="ace-main-stylesheet" id="main-ace-style" />
+
+		<!--[if lte IE 9]>
+			<link rel="stylesheet" href="../assets/css/ace-part2.css" class="ace-main-stylesheet" />
+		<![endif]-->
+
+		<!--[if lte IE 9]>
+		  <link rel="stylesheet" href="../assets/css/ace-ie.css" />
+		<![endif]-->
+
+		<!-- inline styles related to this page -->
+
+		<!-- ace settings handler -->
+		<script src="../assets/js/ace-extra.js"></script>
+
+		<!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
+
+		<!--[if lte IE 8]>
+		<script src="../assets/js/html5shiv.js"></script>
+		<script src="../assets/js/respond.js"></script>
+		<![endif]-->
+		
+		<link rel="stylesheet" href="hdl.css" />
+	</head>
+
+	<body class="no-skin">
+		<!-- #section:basics/navbar.layout -->
+		<div id="navbar" class="navbar navbar-default hdl-navbar-bgcolor">
+			<script type="text/javascript">
+				try{ace.settings.check('navbar' , 'fixed')}catch(e){}
+			</script>
+
+			<div class="navbar-container" id="navbar-container">
+				<!-- #section:basics/sidebar.mobile.toggle -->
+				<button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler" data-target="#sidebar">
+					<span class="sr-only">Toggle sidebar</span>
+
+					<span class="icon-bar"></span>
+
+					<span class="icon-bar"></span>
+
+					<span class="icon-bar"></span>
+				</button>
+
+				<!-- /section:basics/sidebar.mobile.toggle -->
+				<div class="navbar-header pull-left">
+					<!-- #section:basics/navbar.layout.brand -->
+					<a href="#" class="navbar-brand">
+						<small>
+							<img src="hdllogo.png" style="height:22px;" />
+							&nbsp;&nbsp;海底捞应用系统平台
+						</small>
+					</a>
+
+					<!-- /section:basics/navbar.layout.brand -->
+
+					<!-- #section:basics/navbar.toggle -->
+
+					<!-- /section:basics/navbar.toggle -->
+				</div>
+
+				<!-- #section:basics/navbar.dropdown -->
+				<div class="navbar-buttons navbar-header pull-right" role="navigation">
+					<ul class="nav ace-nav">
+						<li class="grey">
+							<a data-toggle="dropdown" class="dropdown-toggle" href="#">
+								<i class="ace-icon fa fa-tasks"></i>
+								<span class="badge badge-grey">4</span>
+							</a>
+
+							<ul class="dropdown-menu-right dropdown-navbar dropdown-menu dropdown-caret dropdown-close">
+								<li class="dropdown-header">
+									<i class="ace-icon fa fa-check"></i>
+									4 项工作待完成（静态演示）
+								</li>
+
+								<li class="dropdown-content">
+									<ul class="dropdown-menu dropdown-navbar">
+										<li>
+											<a href="#">
+												<div class="clearfix">
+													<span class="pull-left">催办任务A</span>
+													<span class="pull-right">65%</span>
+												</div>
+
+												<div class="progress progress-mini">
+													<div style="width:65%" class="progress-bar"></div>
+												</div>
+											</a>
+										</li>
+
+										<li>
+											<a href="#">
+												<div class="clearfix">
+													<span class="pull-left">催办任务B</span>
+													<span class="pull-right">35%</span>
+												</div>
+
+												<div class="progress progress-mini">
+													<div style="width:35%" class="progress-bar progress-bar-danger"></div>
+												</div>
+											</a>
+										</li>
+
+										<li>
+											<a href="#">
+												<div class="clearfix">
+													<span class="pull-left">催办任务C</span>
+													<span class="pull-right">15%</span>
+												</div>
+
+												<div class="progress progress-mini">
+													<div style="width:15%" class="progress-bar progress-bar-warning"></div>
+												</div>
+											</a>
+										</li>
+
+										<li>
+											<a href="#">
+												<div class="clearfix">
+													<span class="pull-left">催办任务D</span>
+													<span class="pull-right">90%</span>
+												</div>
+
+												<div class="progress progress-mini progress-striped active">
+													<div style="width:90%" class="progress-bar progress-bar-success"></div>
+												</div>
+											</a>
+										</li>
+									</ul>
+								</li>
+
+								<li class="dropdown-footer">
+									<a href="#">
+										查看更多
+										<i class="ace-icon fa fa-arrow-right"></i>
+									</a>
+								</li>
+							</ul>
+						</li>
+
+						<li class="purple">
+							<a data-toggle="dropdown" class="dropdown-toggle" href="#">
+								<i class="ace-icon fa fa-bell icon-animated-bell"></i>
+								<span class="badge badge-important">8</span>
+							</a>
+
+							<ul class="dropdown-menu-right dropdown-navbar navbar-pink dropdown-menu dropdown-caret dropdown-close">
+								<li class="dropdown-header">
+									<i class="ace-icon fa fa-exclamation-triangle"></i>
+									8 条新通知
+								</li>
+
+								<li class="dropdown-content">
+									<ul class="dropdown-menu dropdown-navbar navbar-pink">
+										<li>
+											<a href="#">
+												<div class="clearfix">
+													<span class="pull-left">
+														<i class="btn btn-xs no-hover btn-pink fa fa-comment"></i>
+														有新催办到达，需要处理
+													</span>
+													<span class="pull-right badge badge-info">+12</span>
+												</div>
+											</a>
+										</li>
+
+										<li>
+											<a href="#">
+												<div class="clearfix">
+													<span class="pull-left">
+														<i class="btn btn-xs no-hover btn-success fa fa-shopping-cart"></i>
+														OA首页新通知
+													</span>
+													<span class="pull-right badge badge-success">+8</span>
+												</div>
+											</a>
+										</li>
+									</ul>
+								</li>
+
+								<li class="dropdown-footer">
+									<a href="#">
+										查看所有通知
+										<i class="ace-icon fa fa-arrow-right"></i>
+									</a>
+								</li>
+							</ul>
+						</li>
+
+						<li class="green">
+							<a data-toggle="dropdown" class="dropdown-toggle" href="#">
+								<i class="ace-icon fa fa-envelope icon-animated-vertical"></i>
+								<span class="badge badge-success">5</span>
+							</a>
+
+							<ul class="dropdown-menu-right dropdown-navbar dropdown-menu dropdown-caret dropdown-close">
+								<li class="dropdown-header">
+									<i class="ace-icon fa fa-envelope-o"></i>
+									5 新站内消息
+								</li>
+
+								<li class="dropdown-content">
+									<ul class="dropdown-menu dropdown-navbar">
+										<li>
+											<a href="#" class="clearfix">
+												<img src="../assets/avatars/avatar.png" class="msg-photo" alt="Alex's Avatar" />
+												<span class="msg-body">
+													<span class="msg-title">
+														<span class="blue">施琦:</span>
+														请尽快抓紧新催办系统的自主开发 ...
+													</span>
+
+													<span class="msg-time">
+														<i class="ace-icon fa fa-clock-o"></i>
+														<span>刚刚</span>
+													</span>
+												</span>
+											</a>
+										</li>
+
+										<li>
+											<a href="#" class="clearfix">
+												<img src="../assets/avatars/avatar3.png" class="msg-photo" alt="Susan's Avatar" />
+												<span class="msg-body">
+													<span class="msg-title">
+														<span class="blue">彭钰雯:</span>
+														各位请按时参加今天上午10点在7楼中会议室的部门例会 ...
+													</span>
+
+													<span class="msg-time">
+														<i class="ace-icon fa fa-clock-o"></i>
+														<span>20 分钟前</span>
+													</span>
+												</span>
+											</a>
+										</li>
+
+									</ul>
+								</li>
+
+								<li class="dropdown-footer">
+									<a href="inbox.html">
+										查看所有消息
+										<i class="ace-icon fa fa-arrow-right"></i>
+									</a>
+								</li>
+							</ul>
+						</li>
+
+						<!-- #section:basics/navbar.user_menu -->
+						<li class="light-orange">
+							<a data-toggle="dropdown" href="#" class="dropdown-toggle hdl-dropdown-topbar">
+								<img class="nav-user-photo" src="../assets/avatars/user.jpg" />
+								<span class="user-info">
+									<small>Welcome,</small>
+									李曦
+								</span>
+
+								<i class="ace-icon fa fa-caret-down"></i>
+							</a>
+
+							<ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+								<li>
+									<a href="#">
+										<i class="ace-icon fa fa-cog"></i>
+										系统设置
+									</a>
+								</li>
+
+								<li>
+									<a href="profile.html">
+										<i class="ace-icon fa fa-user"></i>
+										个人信息
+									</a>
+								</li>
+
+								<li class="divider"></li>
+
+								<li>
+									<a href="#">
+										<i class="ace-icon fa fa-power-off"></i>
+										登出
+									</a>
+								</li>
+							</ul>
+						</li>
+
+						<!-- /section:basics/navbar.user_menu -->
+					</ul>
+				</div>
+
+				<!-- /section:basics/navbar.dropdown -->
+			</div><!-- /.navbar-container -->
+		</div>
+
+		<!-- /section:basics/navbar.layout -->
+		<div class="main-container" id="main-container">
+			<script type="text/javascript">
+				try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+			</script>
+
+			<!-- #section:basics/sidebar -->
+			<div id="sidebar" class="sidebar responsive menu-min">
+				<script type="text/javascript">
+					//try{ace.settings.check('sidebar' , 'fixed')}catch(e){}
+				</script>
+
+				<div class="sidebar-shortcuts" id="sidebar-shortcuts">
+					<div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
+						<button class="btn btn-success">
+							<i class="ace-icon fa fa-signal"></i>
+						</button>
+
+						<button class="btn btn-info">
+							<i class="ace-icon fa fa-pencil"></i>
+						</button>
+
+						<!-- #section:basics/sidebar.layout.shortcuts -->
+						<button class="btn btn-warning">
+							<i class="ace-icon fa fa-users"></i>
+						</button>
+
+						<button class="btn btn-danger">
+							<i class="ace-icon fa fa-cogs"></i>
+						</button>
+
+						<!-- /section:basics/sidebar.layout.shortcuts -->
+					</div>
+
+					<div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
+						<span class="btn btn-success"></span>
+
+						<span class="btn btn-info"></span>
+
+						<span class="btn btn-warning"></span>
+
+						<span class="btn btn-danger"></span>
+					</div>
+				</div><!-- /.sidebar-shortcuts -->
+
+				<ul class="nav nav-list">
+					<li class="">
+						<a href="cuiban.html">
+							<i class="menu-icon fa fa-pencil-square-o"></i>
+							<span class="menu-text"> 催办管理 </span>
+						</a>
+
+						<b class="arrow"></b>
+						
+						<ul class="submenu">
+							<li class="">
+								<a href="cuiban.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									催办动态 & 统计
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a href="cuiban.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									发起新催办
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+							
+							<li class="">
+								<a href="cuiban.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									催办执行力报表
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+						</ul>
+					</li>
+				</ul>
+
+			</div>
+
+			<!-- /section:basics/sidebar -->
+			<div class="main-content">
+				<div class="main-content-inner">
+					<!-- #section:basics/content.breadcrumbs -->
+					<div class="breadcrumbs" id="breadcrumbs">
+						<script type="text/javascript">
+							try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+						</script>
+
+						<ul class="breadcrumb">
+							<li>
+								<i class="ace-icon fa fa-home home-icon"></i>
+								<a href="#">主页</a>
+							</li>
+
+							<li>
+								<a href="#">催办管理</a>
+							</li>
+							<!--<li class="active">催办动态</li>-->
+						</ul><!-- /.breadcrumb -->
+
+						<!-- #section:basics/content.searchbox -->
+						<div class="nav-search" id="nav-search">
+							<form class="form-search">
+								<span class="input-icon">
+									<input type="text" placeholder="站内搜索..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
+									<i class="ace-icon fa fa-search nav-search-icon"></i>
+								</span>
+							</form>
+						</div><!-- /.nav-search -->
+
+						<!-- /section:basics/content.searchbox -->
+					</div>
+
+					<!-- /section:basics/content.breadcrumbs -->
+					<div class="page-content">
+						
+						<div class="page-header" style="position:relative;">
+							<h1>
+								催办管理系统
+								<small>
+									<i class="ace-icon fa fa-angle-double-right"></i>
+									动态 & 统计
+								</small>
+							</h1>
+							<div class="hdl-title-btn-area">
+								<button class="btn btn-lg btn-success">
+									&nbsp;<i class="ace-icon fa fa-plus"></i>
+									&nbsp;&nbsp;&nbsp;发起新催办&nbsp;&nbsp;
+								</button>
+							</div>
+						</div>
+
+						<!-- /section:settings.box -->
+						<div class="row">
+							<div class="col-xs-12">
+								
+								<div class="alert alert-block alert-warning">
+									<button type="button" class="close" data-dismiss="alert">
+										<i class="ace-icon fa fa-times"></i>
+									</button>
+
+									<i class="ace-icon fa fa-warning red"></i>
+
+									您新收到了<strong class="red"> 3 </strong>条催办 / 全部待您处理的催办共计<strong class="red"> 11 </strong>条。超期时间最近的一条是<strong class="red"> 催办平台开发 </strong>，距离超期<strong class="red"> 13 </strong>小时。
+								</div>
+								
+								<div class="row">
+									<div class="col-sm-12">
+										<div class="space-6"></div>
+										<ul class="nav nav-tabs" id="recent-tab">
+											
+											<li class="active">
+												<a data-toggle="tab" href="#task-tab">
+													&nbsp;&nbsp;全部&nbsp;&nbsp;
+													<span class="badge badge-important">86</span>
+												</a>
+											</li>
+
+											<li>
+												<a data-toggle="tab" href="#member-tab">
+													待我审批/处理&nbsp;
+													<span class="badge badge-grey">1</span>
+												</a>
+											</li>
+
+											<li>
+												<a data-toggle="tab" href="#comment-tab">
+													我发起的&nbsp;
+													<span class="badge badge-grey">2</span>
+												</a>
+											</li>
+											
+											<li>
+												<a data-toggle="tab" href="#comment-tab">
+													我受理的&nbsp;
+													<span class="badge badge-grey">3</span>
+												</a>
+											</li>
+											
+											<li>
+												<a data-toggle="tab" href="#comment-tab">
+													其他与我相关&nbsp;
+													<span class="badge badge-grey">4</span>
+												</a>
+											</li>
+											
+											<li>
+												<a data-toggle="tab" href="#comment-tab">
+													自定义筛选条件&nbsp;+
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+								
+								<div class="row">
+									<div class="space-6"></div>
+									
+									<div class="col-sm-7">
+									
+										<div class="widget-box">
+											
+											<div class="widget-header">
+												<h4 class="widget-title">
+													<i class="ace-icon fa fa-tasks"></i>
+													催办列表
+												</h4>
+												<div class="widget-toolbar no-border">
+													<div class="nav-search hdl-toolbar-search">
+														<form class="form-search">
+															<span class="input-icon">
+																<input type="text" placeholder="快速筛选..." class="hdl-search-input" autocomplete="off" />
+																<i class="ace-icon fa fa-search nav-search-icon"></i>
+															</span>
+														</form>
+													</div>
+													<div class="inline dropdown-hover">
+														<button class="btn btn-minier btn-primary">
+															排序：处理时限&nbsp;↓
+															<i class="ace-icon fa fa-angle-down icon-on-right bigger-110"></i>
+														</button>
+
+														<ul class="dropdown-menu dropdown-menu-right dropdown-125 dropdown-lighter dropdown-close dropdown-caret">
+															<li class="active">
+																<a href="#" class="blue">
+																	<i class="ace-icon fa fa-caret-right bigger-110">&nbsp;</i>
+																	提出时间
+																</a>
+															</li>
+
+															<li>
+																<a href="#">
+																	<i class="ace-icon fa fa-caret-right bigger-110 invisible">&nbsp;</i>
+																	处理时限
+																</a>
+															</li>
+
+															<li>
+																<a href="#">
+																	<i class="ace-icon fa fa-caret-right bigger-110 invisible">&nbsp;</i>
+																	有新动态
+																</a>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="widget-body">
+											<div class="space-4"></div>
+											
+											<div class="hdl-cbdt-row">
+												<div class="hdl-cbdt-row-head">
+													<label class="hdl-cbdt-row-head-check">
+														<input name="form-field-checkbox" type="checkbox" class="ace" />
+														<span class="lbl"></span>
+													</label>
+													<label class="hdl-cbdt-row-head-title">
+														微信企业号抽奖上线 - 1
+													</label>
+													<label class="hdl-cbdt-row-head-overtime">
+														处理时限：<span>21小时</span>
+													</label>
+												</div>
+												<div class="hdl-cbdt-row-body">
+													<div class="hdl-cbdt-row-line">
+														<div class="hdl-cbdt-row-route">
+															<label class="hdl-box-default">提出</label>
+															<span class="hdl-icon hdl-icon-default"></span>
+															<label class="hdl-box-default">待受理</label>
+															<span class="hdl-icon hdl-icon-default"></span>
+															<label class="hdl-box-default">受理中</label>
+															<span class="hdl-icon hdl-icon-default"></span>
+															<label class="hdl-box-default hdl-box-active">执行中</label>
+															<span class="hdl-icon hdl-icon-default"></span>
+															<label class="hdl-box-default">完成</label>
+														</div>
+														<div class="hdl-cbdt-row-description">
+															开发内容详细开发内容详细开发内容详细开发内容详细开发内容详细
+															开发内容详细开发内容详细开发内容详细开发内容详细开发内容详细
+															开发内容详细开发内容详细开发内容详细开发内容详细开发内容详细
+														</div>
+														<div class="hdl-cbdt-row-tcr">提出人：<span>邵志东</span></div>
+														<div class="hdl-cbdt-row-slr">受理人：<span>李曦</span></div>
+													</div>
+													<div class="hdl-cbdt-row-split"></div>
+													<div class="hdl-cbdt-row-line">
+														<div class="hdl-cbdt-row-btn-righttop">
+															<span class="badge badge-important">3 New</span>&nbsp;
+															<span style="cursor:pointer;" onclick="showDrawer(this);">展开详细&nbsp;↓</span>
+														</div>
+														<div class="hdl-cbdt-row-title">最近动态<label>【12/23】邵志东：请张芸发布OA通知，12月29日正式上线</label></div>
+														<div class="hdl-cbdt-row-drawer">
+															<div class="hdl-cbdt-row-onetext">【12/22】李曦：邵老师，此需求已经开发完毕，请确认</div>
+															<div class="hdl-cbdt-row-onetext">【12/14】彭钰雯&nbsp;&nbsp;→&nbsp;&nbsp;李曦&nbsp;&nbsp;&nbsp;&nbsp;——&nbsp;签字意见：此需求分配给李曦处理</div>
+															<div class="hdl-cbdt-row-onetext">【12/12】邵志东：此需求很急，希望1周内上线</div>
+															<div class="hdl-cbdt-row-onetext">【12/12】邵志东&nbsp;&nbsp;→&nbsp;&nbsp;彭钰雯</div>
+														</div>
+													</div>
+													<div class="hdl-cbdt-row-split"></div>
+													<div class="hdl-cbdt-row-line">
+														<div class="hdl-cbdt-row-linecontent">
+															<span class="label label-lg label-purple arrowed arrowed-right">待我审批/处理</span>&nbsp;&nbsp;
+															<span class="label label-lg label-warning arrowed arrowed-right">我受理</span>&nbsp;&nbsp;
+															<span class="label label-lg label-inverse arrowed arrowed-right">高层交办</span>&nbsp;&nbsp;
+														</div>
+													</div>
+													<div class="hdl-cbdt-row-foot"></div>
+												</div>
+											</div>
+											
+											<div class="hdl-split"></div>
+											<div class="space-4"></div>
+											
+											<div class="hdl-cbdt-row">
+												<div class="hdl-cbdt-row-head">
+													<label class="hdl-cbdt-row-head-check">
+														<input name="form-field-checkbox" type="checkbox" class="ace" />
+														<span class="lbl"></span>
+													</label>
+													<label class="hdl-cbdt-row-head-title">
+														微信企业号抽奖上线 - 2
+													</label>
+													<label class="hdl-cbdt-row-head-overtime">
+														处理时限：<span>21小时</span>
+													</label>
+												</div>
+												<div class="hdl-cbdt-row-body">
+													<div class="hdl-cbdt-row-line">
+														<div class="hdl-cbdt-row-route">
+															<label class="hdl-box-default">提出</label>
+															<span class="hdl-icon hdl-icon-default"></span>
+															<label class="hdl-box-default">待受理</label>
+															<span class="hdl-icon hdl-icon-default"></span>
+															<label class="hdl-box-default">受理中</label>
+															<span class="hdl-icon hdl-icon-default"></span>
+															<label class="hdl-box-default hdl-box-active">执行中</label>
+															<span class="hdl-icon hdl-icon-default"></span>
+															<label class="hdl-box-default">完成</label>
+														</div>
+														<div class="hdl-cbdt-row-description">
+															开发内容详细开发内容详细开发内容详细开发内容详细开发内容详细
+															开发内容详细开发内容详细开发内容详细开发内容详细开发内容详细
+															开发内容详细开发内容详细开发内容详细开发内容详细开发内容详细
+														</div>
+														<div class="hdl-cbdt-row-tcr">提出人：<span>邵志东</span></div>
+														<div class="hdl-cbdt-row-slr">受理人：<span>李曦</span></div>
+													</div>
+													<div class="hdl-cbdt-row-split"></div>
+													<div class="hdl-cbdt-row-line">
+														<div class="hdl-cbdt-row-btn-righttop">
+															<span class="badge badge-important">3 New</span>&nbsp;
+															<span style="cursor:pointer;" onclick="showDrawer(this);">展开详细&nbsp;↓</span>
+														</div>
+														<div class="hdl-cbdt-row-title">最近动态<label>【12/23】邵志东：请张芸发布OA通知，12月29日正式上线</label></div>
+														<div class="hdl-cbdt-row-drawer">
+															<div class="hdl-cbdt-row-onetext">【12/22】李曦：邵老师，此需求已经开发完毕，请确认</div>
+															<div class="hdl-cbdt-row-onetext">【12/14】彭钰雯&nbsp;&nbsp;→&nbsp;&nbsp;李曦&nbsp;&nbsp;&nbsp;&nbsp;——&nbsp;签字意见：此需求分配给李曦处理</div>
+															<div class="hdl-cbdt-row-onetext">【12/12】邵志东：此需求很急，希望1周内上线</div>
+															<div class="hdl-cbdt-row-onetext">【12/12】邵志东&nbsp;&nbsp;→&nbsp;&nbsp;彭钰雯</div>
+														</div>
+													</div>
+													<div class="hdl-cbdt-row-split"></div>
+													<div class="hdl-cbdt-row-line">
+														<div class="hdl-cbdt-row-linecontent">
+															<span class="label label-lg label-purple arrowed arrowed-right">待我审批/处理</span>&nbsp;&nbsp;
+															<span class="label label-lg label-warning arrowed arrowed-right">我受理</span>&nbsp;&nbsp;
+															<span class="label label-lg label-inverse arrowed arrowed-right">高层交办</span>&nbsp;&nbsp;
+														</div>
+													</div>
+													<div class="hdl-cbdt-row-foot"></div>
+												</div>
+											</div>
+											
+											<div class="hdl-split"></div>
+											<div class="space-4"></div>
+											
+											<div class="hdl-cbdt-row">
+												<div class="hdl-cbdt-row-head">
+													<label class="hdl-cbdt-row-head-check">
+														<input name="form-field-checkbox" type="checkbox" class="ace" />
+														<span class="lbl"></span>
+													</label>
+													<label class="hdl-cbdt-row-head-title">
+														微信企业号抽奖上线 - 3
+													</label>
+													<label class="hdl-cbdt-row-head-overtime">
+														处理时限：<span>21小时</span>
+													</label>
+												</div>
+												<div class="hdl-cbdt-row-body">
+													<div class="hdl-cbdt-row-line">
+														<div class="hdl-cbdt-row-route">
+															<label class="hdl-box-default">提出</label>
+															<span class="hdl-icon hdl-icon-default"></span>
+															<label class="hdl-box-default">待受理</label>
+															<span class="hdl-icon hdl-icon-default"></span>
+															<label class="hdl-box-default">受理中</label>
+															<span class="hdl-icon hdl-icon-default"></span>
+															<label class="hdl-box-default hdl-box-active">执行中</label>
+															<span class="hdl-icon hdl-icon-default"></span>
+															<label class="hdl-box-default">完成</label>
+														</div>
+														<div class="hdl-cbdt-row-description">
+															开发内容详细开发内容详细开发内容详细开发内容详细开发内容详细
+															开发内容详细开发内容详细开发内容详细开发内容详细开发内容详细
+															开发内容详细开发内容详细开发内容详细开发内容详细开发内容详细
+														</div>
+														<div class="hdl-cbdt-row-tcr">提出人：<span>邵志东</span></div>
+														<div class="hdl-cbdt-row-slr">受理人：<span>李曦</span></div>
+													</div>
+													<div class="hdl-cbdt-row-split"></div>
+													<div class="hdl-cbdt-row-line">
+														<div class="hdl-cbdt-row-btn-righttop">
+															<span class="badge badge-important">3 New</span>&nbsp;
+															<span style="cursor:pointer;" onclick="showDrawer(this);">展开详细&nbsp;↓</span>
+														</div>
+														<div class="hdl-cbdt-row-title">最近动态<label>【12/23】邵志东：请张芸发布OA通知，12月29日正式上线</label></div>
+														<div class="hdl-cbdt-row-drawer">
+															<div class="hdl-cbdt-row-onetext">【12/22】李曦：邵老师，此需求已经开发完毕，请确认</div>
+															<div class="hdl-cbdt-row-onetext">【12/14】彭钰雯&nbsp;&nbsp;→&nbsp;&nbsp;李曦&nbsp;&nbsp;&nbsp;&nbsp;——&nbsp;签字意见：此需求分配给李曦处理</div>
+															<div class="hdl-cbdt-row-onetext">【12/12】邵志东：此需求很急，希望1周内上线</div>
+															<div class="hdl-cbdt-row-onetext">【12/12】邵志东&nbsp;&nbsp;→&nbsp;&nbsp;彭钰雯</div>
+														</div>
+													</div>
+													<div class="hdl-cbdt-row-split"></div>
+													<div class="hdl-cbdt-row-line">
+														<div class="hdl-cbdt-row-linecontent">
+															<span class="label label-lg label-purple arrowed arrowed-right">待我审批/处理</span>&nbsp;&nbsp;
+															<span class="label label-lg label-warning arrowed arrowed-right">我受理</span>&nbsp;&nbsp;
+															<span class="label label-lg label-inverse arrowed arrowed-right">高层交办</span>&nbsp;&nbsp;
+														</div>
+													</div>
+													<div class="hdl-cbdt-row-foot"></div>
+												</div>
+											</div>
+											
+											<div class="hdl-split"></div>
+											<div class="space-4"></div>
+											
+											<div class="hdl-cbdt-row">
+												<div class="hdl-cbdt-row-head">
+													<label class="hdl-cbdt-row-head-check">
+														<input name="form-field-checkbox" type="checkbox" class="ace" />
+														<span class="lbl"></span>
+													</label>
+													<label class="hdl-cbdt-row-head-title">
+														催办管理系统开发
+													</label>
+													<label class="hdl-cbdt-row-head-overtime">
+														处理时限：<span>2天13小时</span>
+													</label>
+												</div>
+												<div class="hdl-cbdt-row-body">
+													<div class="hdl-cbdt-row-line">
+														<div class="hdl-cbdt-row-route">
+															<label class="hdl-box-default">提出</label>
+															<span class="hdl-icon hdl-icon-default"></span>
+															<label class="hdl-box-default">待受理</label>
+															<span class="hdl-icon hdl-icon-default"></span>
+															<label class="hdl-box-default hdl-box-active">受理中</label>
+															<span class="hdl-icon hdl-icon-default"></span>
+															<label class="hdl-box-default">执行中</label>
+															<span class="hdl-icon hdl-icon-default"></span>
+															<label class="hdl-box-default">完成</label>
+														</div>
+														<div class="hdl-cbdt-row-description">
+															开发内容详细开发内容详细开发内容详细开发内容详细开发内容详细
+															开发内容详细开发内容详细开发内容详细开发内容详细开发内容详细
+															开发内容详细开发内容详细开发内容详细开发内容详细开发内容详细
+														</div>
+														<div class="hdl-cbdt-row-tcr">提出人：<span>施琦</span></div>
+														<div class="hdl-cbdt-row-slr">受理人：<span>李曦</span></div>
+													</div>
+													<div class="hdl-cbdt-row-split"></div>
+													<div class="hdl-cbdt-row-line">
+														<div class="hdl-cbdt-row-btn-righttop">
+															<span class="badge badge-important">5 New</span>&nbsp;
+															<span style="cursor:pointer;" onclick="showDrawer(this);">展开详细&nbsp;↓</span>
+														</div>
+														<div class="hdl-cbdt-row-title">最近动态<label>【12/23】施琦：此事列为重点工作，请尽快开发</label></div>
+														<div class="hdl-cbdt-row-drawer">
+															<div class="hdl-cbdt-row-onetext">【12/22】李曦：邵老师，此需求已经开发完毕，请确认</div>
+															<div class="hdl-cbdt-row-onetext">【12/14】彭钰雯&nbsp;&nbsp;→&nbsp;&nbsp;李曦&nbsp;&nbsp;&nbsp;&nbsp;——&nbsp;签字意见：此需求分配给李曦处理</div>
+															<div class="hdl-cbdt-row-onetext">【12/12】邵志东：此需求很急，希望1周内上线</div>
+															<div class="hdl-cbdt-row-onetext">【12/12】邵志东&nbsp;&nbsp;→&nbsp;&nbsp;彭钰雯</div>
+														</div>
+													</div>
+													<div class="hdl-cbdt-row-split"></div>
+													<div class="hdl-cbdt-row-line">
+														<div class="hdl-cbdt-row-linecontent">
+															<span class="label label-lg label-purple arrowed arrowed-right">待我审批/处理</span>&nbsp;&nbsp;
+															<span class="label label-lg label-danger arrowed arrowed-right">已超期</span>&nbsp;&nbsp;
+															<span class="label label-lg label-success arrowed arrowed-right">我发起</span>&nbsp;&nbsp;
+															<span class="label label-lg label-warning arrowed arrowed-right">我受理</span>&nbsp;&nbsp;
+															<span class="label label-lg label-inverse arrowed arrowed-right">高层交办</span>&nbsp;&nbsp;
+															<span class="label label-lg label-pink arrowed arrowed-right">紧急催办</span>&nbsp;&nbsp;
+														</div>
+													</div>
+													<div class="hdl-cbdt-row-foot"></div>
+												</div>
+											</div>
+											
+											
+										</div>
+									</div>
+									
+									<div class="vspace-12-sm"></div>
+									
+									<div class="space-4"></div>
+									
+									<div class="col-sm-5 infobox-container">
+									
+										<div class="infobox infobox-orange2 infobox-small hdl-infobox-small">
+											<div class="hdl-infobox-lefttext" style="background:#F79263;">待受理</div>
+											<div class="hdl-infobox-numbertext" style="color:#F79263;background:#FFFDFD;">5</div>
+										</div>
+										
+										<div class="infobox infobox-blue2 infobox-small hdl-infobox-small">
+											<div class="hdl-infobox-lefttext" style="background:#3983C2;">受理中</div>
+											<div class="hdl-infobox-numbertext" style="color:#3983C2;background:#F9FDFF;">7</div>
+										</div>
+										
+										<div class="infobox infobox-green infobox-small hdl-infobox-small">
+											<div class="hdl-infobox-lefttext" style="background:#9ABC32;">执行中</div>
+											<div class="hdl-infobox-numbertext" style="color:#9ABC32;background:#FCFFF2;">13</div>
+										</div>
+										
+										<div class="infobox infobox-grey infobox-small hdl-infobox-small">
+											<div class="hdl-infobox-lefttext" style="background:#999999;">已完成</div>
+											<div class="hdl-infobox-numbertext" style="color:#999999;background:#FCFCFC;">21</div>
+										</div>
+										
+										<div class="infobox infobox-light-brown infobox-small hdl-infobox-small">
+											<div class="hdl-infobox-lefttext" style="background:#CEBEA5;">已关闭</div>
+											<div class="hdl-infobox-numbertext" style="color:#CEBEA5;background:#FFFEFD;">2</div>
+										</div>
+										
+										<div class="infobox infobox-red infobox-small hdl-infobox-small">
+											<div class="hdl-infobox-lefttext" style="background:#D53F40;">已超期</div>
+											<div class="hdl-infobox-numbertext" style="color:#D53F40;background:#FFFAFB;">3</div>
+										</div>
+										
+										<div class="space-4"></div>
+										
+										<div class="widget-box" style="text-align:left;">
+											
+											<div class="widget-header widget-header-flat widget-header-small">
+												<h5 class="widget-title">
+													<i class="ace-icon fa fa-signal"></i>
+													统计排名
+												</h5>
+
+												<div class="widget-toolbar no-border">
+													<div class="inline dropdown-hover">
+														<button class="btn btn-minier btn-primary">
+															受理部门
+															<i class="ace-icon fa fa-angle-down icon-on-right bigger-110"></i>
+														</button>
+
+														<ul class="dropdown-menu dropdown-menu-right dropdown-125 dropdown-lighter dropdown-close dropdown-caret">
+															<li class="active">
+																<a href="#" class="blue">
+																	<i class="ace-icon fa fa-caret-right bigger-110">&nbsp;</i>
+																	受理部门
+																</a>
+															</li>
+
+															<li>
+																<a href="#">
+																	<i class="ace-icon fa fa-caret-right bigger-110 invisible">&nbsp;</i>
+																	受理人员
+																</a>
+															</li>
+
+															<li>
+																<a href="#">
+																	<i class="ace-icon fa fa-caret-right bigger-110 invisible">&nbsp;</i>
+																	超期部门
+																</a>
+															</li>
+
+															<li>
+																<a href="#">
+																	<i class="ace-icon fa fa-caret-right bigger-110 invisible">&nbsp;</i>
+																	超期人员
+																</a>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+											
+											<div class="widget-body">
+												<div class="widget-main">
+													<div id="piechart-placeholder"></div>
+
+													<div class="hr hr8 hr-double"></div>
+
+													<div class="clearfix">
+														<div class="grid2">
+															<h6 class="bigger pull-left">信息管理部</h6>
+															<h4 class="bigger pull-right">123</h4>
+														</div>
+														<div class="grid2">
+															<h6 class="bigger pull-left">财务部</h6>
+															<h4 class="bigger pull-right">94</h4>
+														</div>
+													</div>
+													<div class="clearfix">
+														<div class="grid2">
+															<h6 class="bigger pull-left">人力资源部</h6>
+															<h4 class="bigger pull-right">63</h4>
+														</div>
+														<div class="grid2">
+															<h6 class="bigger pull-left">海底捞大学</h6>
+															<h4 class="bigger pull-right">50</h4>
+														</div>
+													</div>
+													<div class="clearfix">
+														<div class="grid2">
+															<h6 class="bigger pull-left">工程部</h6>
+															<h4 class="bigger pull-right">42</h4>
+														</div>
+														<div class="grid2">
+															<h6 class="bigger pull-left">&nbsp;</h6>
+															<h4 class="bigger pull-right">&nbsp;</h4>
+														</div>
+													</div>
+												</div>
+											</div>
+											
+										</div>
+									
+									</div>
+									
+									<div class="col-sm-5 infobox-container">
+										
+									</div>
+								</div>
+									
+								<div class="hr hr32 hr-dotted"></div>
+								
+								<div class="row">
+								</div>
+								
+								
+							</div><!-- /.col -->
+						</div><!-- /.row -->
+					</div><!-- /.page-content -->
+				</div>
+			</div><!-- /.main-content -->
+
+			<div class="footer">
+				<div class="footer-inner">
+					<!-- #section:basics/footer -->
+					<div class="footer-content">
+						<span >
+							Copyright © 2014 - 2015&nbsp;&nbsp;&nbsp;四川海底捞餐饮股份有限公司&nbsp;&nbsp;&nbsp;&nbsp;All rights reserved.
+						</span>
+					</div>
+
+					<!-- /section:basics/footer -->
+				</div>
+			</div>
+
+			<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+				<i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+			</a>
+		</div><!-- /.main-container -->
+
+		<!-- basic scripts -->
+
+		<!--[if !IE]> -->
+		<script type="text/javascript">
+			window.jQuery || document.write("<script src='../assets/js/jquery.js'>"+"<"+"/script>");
+		</script>
+
+		<!-- <![endif]-->
+
+		<!--[if IE]>
+<script type="text/javascript">
+ window.jQuery || document.write("<script src='../assets/js/jquery1x.js'>"+"<"+"/script>");
+</script>
+<![endif]-->
+		<script type="text/javascript">
+			if('ontouchstart' in document.documentElement) document.write("<script src='../assets/js/jquery.mobile.custom.js'>"+"<"+"/script>");
+		</script>
+		<script src="../assets/js/bootstrap.js"></script>
+
+		<!-- page specific plugin scripts -->
+		
+		<!--[if lte IE 8]>
+		  <script src="../assets/js/excanvas.js"></script>
+		<![endif]-->
+		<script src="../assets/js/jquery-ui.custom.js"></script>
+		<script src="../assets/js/jquery.ui.touch-punch.js"></script>
+		<script src="../assets/js/jquery.easypiechart.js"></script>
+		<script src="../assets/js/jquery.sparkline.js"></script>
+		<script src="../assets/js/flot/jquery.flot.js"></script>
+		<script src="../assets/js/flot/jquery.flot.pie.js"></script>
+		<script src="../assets/js/flot/jquery.flot.resize.js"></script>
+
+		<!-- ace scripts -->
+		<script src="../assets/js/ace/elements.scroller.js"></script>
+		<script src="../assets/js/ace/elements.colorpicker.js"></script>
+		<script src="../assets/js/ace/elements.fileinput.js"></script>
+		<script src="../assets/js/ace/elements.typeahead.js"></script>
+		<script src="../assets/js/ace/elements.wysiwyg.js"></script>
+		<script src="../assets/js/ace/elements.spinner.js"></script>
+		<script src="../assets/js/ace/elements.treeview.js"></script>
+		<script src="../assets/js/ace/elements.wizard.js"></script>
+		<script src="../assets/js/ace/elements.aside.js"></script>
+		<script src="../assets/js/ace/ace.js"></script>
+		<script src="../assets/js/ace/ace.ajax-content.js"></script>
+		<script src="../assets/js/ace/ace.touch-drag.js"></script>
+		<script src="../assets/js/ace/ace.sidebar.js"></script>
+		<script src="../assets/js/ace/ace.sidebar-scroll-1.js"></script>
+		<script src="../assets/js/ace/ace.submenu-hover.js"></script>
+		<script src="../assets/js/ace/ace.widget-box.js"></script>
+		<script src="../assets/js/ace/ace.settings.js"></script>
+		<script src="../assets/js/ace/ace.settings-rtl.js"></script>
+		<script src="../assets/js/ace/ace.settings-skin.js"></script>
+		<script src="../assets/js/ace/ace.widget-on-reload.js"></script>
+		<script src="../assets/js/ace/ace.searchbox-autocomplete.js"></script>
+
+		<!-- inline scripts related to this page -->
+		
+		<script type="text/javascript">
+			jQuery(function($) {
+				var placeholder = $('#piechart-placeholder').css({'width':'90%' , 'min-height':'150px'});
+			  var data = [
+				{ label: "信息管理部",  data: 38.7, color: "#68BC31"},
+				{ label: "财务部",  data: 24.5, color: "#2091CF"},
+				{ label: "人力资源部",  data: 8.2, color: "#AF4E96"},
+				{ label: "海底捞大学",  data: 18.6, color: "#DA5430"},
+				{ label: "工程部",  data: 10, color: "#FEE074"}
+			  ]
+			  function drawPieChart(placeholder, data, position) {
+			 	  $.plot(placeholder, data, {
+					series: {
+						pie: {
+							show: true,
+							tilt:0.8,
+							highlight: {
+								opacity: 0.25
+							},
+							stroke: {
+								color: '#fff',
+								width: 2
+							},
+							startAngle: 2
+						}
+					},
+					legend: {
+						show: true,
+						position: position || "ne", 
+						labelBoxBorderColor: null,
+						margin:[-30,15]
+					}
+					,
+					grid: {
+						hoverable: true,
+						clickable: true
+					}
+				 })
+			 }
+			 drawPieChart(placeholder, data);
+			
+			 /**
+			 we saved the drawing function and the data to redraw with different position later when switching to RTL mode dynamically
+			 so that's not needed actually.
+			 */
+			 placeholder.data('chart', data);
+			 placeholder.data('draw', drawPieChart);
+			
+			
+			  //pie chart tooltip example
+			  var $tooltip = $("<div class='tooltip top in'><div class='tooltip-inner'></div></div>").hide().appendTo('body');
+			  var previousPoint = null;
+			
+			  placeholder.on('plothover', function (event, pos, item) {
+				if(item) {
+					if (previousPoint != item.seriesIndex) {
+						previousPoint = item.seriesIndex;
+						var tip = item.series['label'] + " : " + item.series['percent']+'%';
+						$tooltip.show().children(0).text(tip);
+					}
+					$tooltip.css({top:pos.pageY + 10, left:pos.pageX + 10});
+				} else {
+					$tooltip.hide();
+					previousPoint = null;
+				}
+				
+			 });
+			
+				/////////////////////////////////////
+				$(document).one('ajaxloadstart.page', function(e) {
+					$tooltip.remove();
+				});
+			
+			
+			
+			
+				var d1 = [];
+				for (var i = 0; i < Math.PI * 2; i += 0.5) {
+					d1.push([i, Math.sin(i)]);
+				}
+			
+				var d2 = [];
+				for (var i = 0; i < Math.PI * 2; i += 0.5) {
+					d2.push([i, Math.cos(i)]);
+				}
+			
+				var d3 = [];
+				for (var i = 0; i < Math.PI * 2; i += 0.2) {
+					d3.push([i, Math.tan(i)]);
+				}
+				
+			
+				var sales_charts = $('#sales-charts').css({'width':'100%' , 'height':'220px'});
+				$.plot("#sales-charts", [
+					{ label: "Domains", data: d1 },
+					{ label: "Hosting", data: d2 },
+					{ label: "Services", data: d3 }
+				], {
+					hoverable: true,
+					shadowSize: 0,
+					series: {
+						lines: { show: true },
+						points: { show: true }
+					},
+					xaxis: {
+						tickLength: 0
+					},
+					yaxis: {
+						ticks: 10,
+						min: -2,
+						max: 2,
+						tickDecimals: 3
+					},
+					grid: {
+						backgroundColor: { colors: [ "#fff", "#fff" ] },
+						borderWidth: 1,
+						borderColor:'#555'
+					}
+				});
+			});
+			
+			function showDrawer(el){
+				var thisDrawer = $(el).parent().parent().children(".hdl-cbdt-row-drawer");
+				if(thisDrawer.css("display") == "none"){
+					thisDrawer.css({"display":"block","height":"0px"}).animate({"height":(24*4+12)+"px"},300);
+				}
+				else{
+					thisDrawer.animate({"height":"0px"},300,function(){
+						$(this).css({"display":"none"});
+					});
+				}
+			}
+		</script>
+		
+	</body>
+</html>
