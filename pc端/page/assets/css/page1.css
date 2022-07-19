@@ -1,0 +1,551 @@
+.search{
+  padding: 10px 10px;
+  background-color: #fff;
+}
+.search .form-group:nth-child(2){
+  margin-left: 33px;
+}
+.search .title{
+  margin-right: 12px;
+  color: #323232;
+  font-size: 14px;
+}
+.search .form-select{
+  width: 220px;
+  padding: 10px 13px;
+  border-radius: 4px;
+  border: 1px solid #DCDFE6;
+  color: #C0C4CC;
+}
+
+
+/*--------------------------------------------------------------
+# work-order 工单状态
+--------------------------------------------------------------*/
+.work-order{
+  margin: 26px 0;
+}
+.work-order .wrap{
+  display: flex;
+}
+.work-order .wrap>div{
+  flex: 1;
+  color: #fff;
+  padding: 20px;
+  margin-right: 23px;
+}
+.work-order .wrap h5{
+  font-weight: normal;
+  font-size: 18px;
+  font-family: PingFang-SC-Bold;
+}
+.work-order .wrap p{
+  font-weight: 500;
+  font-size: 34px;
+  font-family: HelveticaNeue-Bold;
+}
+.work-order .wrap .wrap-1{
+  background:url("../images/add-order.png") no-repeat center center;
+  background-size: 100% 100%;
+}
+.work-order .wrap .wrap-2{
+  background:url("../images/end-order.png") no-repeat center center;
+  background-size: 100% 100%;
+}   
+.work-order .wrap .wrap-3{
+  background:url("../images/agency-order.png") no-repeat center center;
+  background-size: 100% 100%;
+}    
+.work-order .wrap .wrap-4{
+  background:url("../images/current-add-order.png") no-repeat center center;
+  background-size: 100% 100%;
+}  
+.work-order .wrap .wrap-5{
+  background:url("../images/current-end-order.png") no-repeat center center;
+  background-size: 100% 100%;
+  margin-right: 0;
+}    
+
+/*--------------------------------------------------------------
+# pool-container 容器池
+--------------------------------------------------------------*/
+.pool-container{
+  display: flex;
+}
+.wrap-left{
+  flex: 5;
+  margin-right: 24px;
+}
+.navbar-right{
+  margin-right: 0;
+}
+.wrap-right{
+  flex: 2;
+}
+.pool-container .row{
+  margin-left: 0;
+  margin-right: 0;
+}
+.pool-container .title{
+  position: relative;
+  color: #323232;
+  font-size: 18px;
+  font-family: PingFangSC-Medium;
+}
+.pool-container .title::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  border-right: 4px solid #3678FF;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  height: 100%;
+  margin-left: -25px;
+}
+.pool-container .see-more{
+  cursor: pointer;
+}
+.poll-padding{
+  padding: 25px;
+  margin-bottom: 26px;
+  background-color: #fff;
+  border-radius: 6px;
+}
+.nav-pills > li > a{
+  border-radius: 0;
+}
+.nav-border-style li {
+  border: 1px solid #DCDFE6;
+}
+.nav-border-style li:first-child{
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.nav-border-style li:last-child{
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.nav-border-style>li+li {
+  margin-left: 0;
+  border-left: 0;
+}
+
+.nav-border-style li a {
+  padding: 5px 10px;
+  color: #323232;
+}
+
+.nav-border-style>li.active>a,
+.nav-border-style>li.active>a:hover,
+.nav-border-style>li.active>a:focus {
+  background: #EAF5FF;
+  color: #79C0FA;
+}
+.table > thead > tr > th{
+  border-bottom: 1px solid #ddd;
+}
+table thead th{
+  background-color: #F8F8F8;
+  font-family: PingFangSC-Medium;
+  font-weight: normal;
+}
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td{
+  padding: 11px 8px;
+}
+/*--------------------------------------------------------------
+# ticket-pool 工单池
+--------------------------------------------------------------*/
+.ticket-pool>div{
+  padding-left: 0;
+  padding-right: 0;
+}
+.ticket-pool .wrap-content{
+  margin-top: 20px;
+}
+.ticket-pool .wrap-content .tab-pane{
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.ticket-pool .table{
+  border: 1px solid #EBEDF0;
+  margin-bottom: 10px;
+  max-height: 300px;
+}
+.ticket-pool .table tbody{
+  display: block;
+  width: calc(100% + 8px); /*这里的8px是滚动条的宽度*/
+  height: 305px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.ticket-pool .table thead tr, .ticket-pool .table tbody tr{
+  box-sizing: border-box;
+  table-layout: fixed;
+  display: table;
+  width: 100%;
+}
+.ticket-pool .table thead tr th:nth-child(1){
+  width: 15%;
+}
+.ticket-pool .table thead tr th:nth-child(2){
+  width: 15%;
+}
+.ticket-pool .table thead tr th:nth-child(3){
+  width: 30%;
+}
+.ticket-pool .table thead tr th:nth-child(4){
+  width: 30%;
+}
+.ticket-pool .table thead tr th:nth-child(5){
+  width: 10%;
+}
+.ticket-pool .table td{
+  vertical-align:middle;
+  color: #656565;
+  padding: 8px;
+  box-sizing: border-box;
+}
+.ticket-pool .table td:nth-child(1){
+  width: 15%;
+}
+.ticket-pool .table td:nth-child(2){
+  width: 15%;
+}
+.ticket-pool .table td:nth-child(3){
+  width: 30%;
+}
+.ticket-pool .table td:nth-child(4){
+  width: 30%;
+}
+.ticket-pool .table td:nth-child(5){
+  width: 10%;
+}
+
+.ticket-pool .table td.third-content b{
+  font-family: PingFangSC-Medium;
+}
+.ticket-pool .table td.third-content i{
+  margin-left: 10px;
+  font-size: 12px;
+  color: #F39800;
+}
+.ticket-pool .table td.third-content > p:last-child{
+  margin-bottom: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: #989898;
+  font-size: 12px;
+}
+.ticket-pool .table i.circle{
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #ddd;
+  margin-right: 6px;
+}
+.ticket-pool .table i.bg-color{
+  background-color: #F39800;
+}
+.ticket-pool .see-more{
+  margin-top: 6px;
+}
+
+/*--------------------------------------------------------------
+# seat-status 坐席工作状态 
+--------------------------------------------------------------*/
+.seat-status.col-lg-6{
+  margin-right: 25px;
+  width: 55%;
+}
+.seat-status .content{
+  display: flex;
+  align-items: center;
+  margin-top: 25px;
+  margin-bottom: 10px;
+  color:#656565;
+}
+.seat-status .content > div{
+  margin-right: 11px;
+}
+.seat-status .content .number{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 26px;
+  height: 26px;
+  background-color: #F7F8FA;
+  border-radius: 4px;
+  color: #656565;
+}
+.seat-status .content .number.active{
+  background-color: #3678FF;
+  color: #fff;
+}
+.seat-status .content .media-list .media-heading{
+  font-family: PingFangSC-Medium;
+}
+.seat-status .content .media-list img{
+  width: 49px;
+  height: 49px;
+}
+.seat-status .content .media-list .media-body p:last-child{
+  margin-bottom: 0;
+  color: #989898;
+  font-size: 12px;
+}
+.seat-status .content .progress{
+  width: 35%;
+  margin-bottom: 0;
+  height: 10px;
+}
+.seat-status .content .progress .progress-bar-color-1{
+  background-color: #FC4449;
+}
+.seat-status .content .progress .progress-bar-color-2{
+  background-color: #FF7A03;
+}
+.seat-status .content .progress .progress-bar-color-3{
+  background-color: #0DC9BF;
+}
+.seat-status .content .progress .progress-bar-color-4{
+  background-color: #3678FF;
+}
+.seat-status .content .progress .progress-bar-color-5{
+  background-color: #3678FF;
+}
+.seat-status .content .odd-numbers{
+  color:#656565;
+}
+.seat-status .content .percentage{
+  margin: 0 auto;
+  margin-right: 0;
+}
+/*--------------------------------------------------------------
+# serve-warning 服务预警
+--------------------------------------------------------------*/
+.serve-warning .content{
+  margin-top: 28px;
+  padding-bottom: 10px;
+}
+.serve-warning .content .list-group{
+  margin-bottom: 0;
+}
+.serve-warning .content .list-group-item{
+  background-color: #F7F8FA;
+  border: none;
+  margin-bottom: 10px;
+  padding: 15.5px 15px;
+}
+.serve-warning .content .list-group-item img{
+  margin-right: 25px;
+}
+.serve-warning .content .list-group-item .quantity{
+  display: flex;
+  align-items: center;
+  padding-top: 10px;
+  color: #656565;
+  background: transparent;
+}
+.serve-warning .content .list-group-item .quantity b:first-child{
+  margin-right: 6px;
+  color: #0461AD;
+  font-family: HelveticaNeue-Bold;
+  font-size: 24px;
+}
+.serve-warning .content .list-group-item .quantity b:last-child{
+  margin-top: 5px;
+}
+/*--------------------------------------------------------------
+# daily-work 每日工单
+--------------------------------------------------------------*/
+
+
+
+
+
+/*--------------------------------------------------------------
+# serve-container 服务响应时间
+--------------------------------------------------------------*/
+.serve-container{
+  background-color: #fff;
+}
+.serve-container p{
+  padding-bottom: 24px;
+  margin: 42px 0 26px 0;
+  border-bottom: 1px solid #DCDFE6;
+}
+.serve-container b{
+  font-size: 20px;
+  font-family: HelveticaNeue-Bold;
+}
+.serve-container .previous-period{
+  margin-right: 15px;
+  color: #989898;
+}
+.serve-container .percent,.serve-container .bi-arrow-down{
+  color: #F56C6C;
+}
+
+/*--------------------------------------------------------------
+# weekly-or-monthly 周榜｜月榜 
+--------------------------------------------------------------*/
+.weekly-or-monthly{
+  position: relative;
+  padding-top: 35px;
+}
+.weekly-or-monthly .wrap table {
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.weekly-or-monthly .wrap table th, .weekly-or-monthly .wrap table td{
+  text-align: center;
+}
+.weekly-or-monthly .wrap table td{
+  vertical-align: middle;
+  color: #656565;
+}
+.weekly-or-monthly .wrap table img{
+  /* width: 26px; */
+}
+.nav-line-style::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  border-right: 4px solid #3678FF;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  height: 20px;
+}
+.nav-line-style > li.active > a, .nav-line-style > li.active > a:hover, .nav-line-style > li.active > a:focus{
+  color: #0062B1;
+  background-color: transparent;
+}
+.nav-line-style > li > a:hover, .nav-line-style > li > a:focus{
+  background-color:transparent
+}
+.nav-line-style > li > a{
+  padding: 0;
+  padding-right: 14px;
+  border-radius: 0;
+
+}
+.nav-line-style > li:first-child > a{
+  border-right: 1px solid #DCDFE6;
+}
+.nav-line-style > li:last-child > a{
+  padding-left: 14px;
+}
+/*--------------------------------------------------------------
+# overall-situation 工单池整体情况
+--------------------------------------------------------------*/
+.overall-situation .pie-title{
+  margin-left: 35%;
+  position: relative;
+  top: 20px;
+}
+
+
+@media (min-width: 1441px) and (max-width: 1920px) {
+  .main{
+    width: 1360px;
+    margin: 0 auto;
+  }
+  .navbar-right{
+    margin-right: 0;
+  }
+  #daily-week,#daily-month,#daily-year{
+    width:900px;
+    height:350px;
+  }
+  #pieChart-week-left,#pieChart-week-right, #pieChart-month-left,#pieChart-month-right, #pieChart-year-left,#pieChart-year-right{
+    width: 430px;
+    height:300px;
+  }
+  #dash-board{
+    width: 310px;
+    height: 330px;
+    margin-top: 28px;
+  }
+  .poll-padding{
+    padding: 25px;
+    margin-bottom: 26px;
+  }
+  .pool-container .title{
+    font-size: 18px;
+  }
+  .pool-container .title::before{
+    margin-left: -25px;
+  }
+  .seat-status .content > div{
+    margin-right: 18px;
+  }
+  .work-order .wrap>div{
+    padding: 24px 30px;
+  }
+  .work-order .wrap h5{
+    font-size: 18px;
+  }
+  .work-order .wrap p{
+    font-size: 34px;
+  }
+  .ticket-pool .table{
+    font-size: 14px;
+  }
+  .weekly-or-monthly .wrap table {
+    font-size: 14px;
+  }
+}
+@media (min-width: 1280px) and (max-width: 1440px) {
+  .main{
+    width: 1150px;
+    margin: 0 auto;
+  }
+  .navbar-right{
+    margin-right: 0;
+  }
+  #daily-week,#daily-month,#daily-year{
+    width: 770px;
+    height:350px;
+  }
+  #pieChart-week-left,#pieChart-week-right, #pieChart-month-left,#pieChart-month-right, #pieChart-year-left,#pieChart-year-right{
+    width: 350px;
+    height:300px;
+  }
+  #dash-board{
+    width: 260px;
+    height: 320px;
+    margin-top: 28px;
+  }
+  .poll-padding{
+    padding: 15px;
+    margin-bottom: 18px;
+  }
+  .pool-container .title{
+    font-size: 16px;
+  }
+  .pool-container .title::before{
+    margin-left: -15px;
+  }
+  .seat-status .content > div{
+    margin-right: 11px;
+  }
+  .work-order .wrap>div{
+    padding: 14px 24px;
+  }
+  .work-order .wrap h5{
+    font-size: 14px;
+  }
+  .work-order .wrap p{
+    font-size: 26px;
+  }
+  .ticket-pool .table{
+    font-size: 12px;
+  }
+  .weekly-or-monthly .wrap table {
+    font-size: 12px;
+  }
+}

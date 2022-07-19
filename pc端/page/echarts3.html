@@ -1,0 +1,190 @@
+  
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>#chart-panel {
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+            }
+</style>
+
+
+<script src="https://lib.baomitu.com/echarts/4.9.0-rc.1/echarts.min.js"></script>
+
+
+<script src=""></script>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+</head>
+<body>
+<div id="chart-panel" style="margin-top:30px"></div>
+<a href="http://chartsdev.com">chartsdev.com 数据可视化技术分享</a>
+  
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('chart-panel'));
+option = {
+    tooltip: {
+        formatter: "{b} : {c}%"
+    },
+
+    series: [{
+            name: "",
+            type: "gauge",
+            // center: ['20%', '50%'],
+            radius: '40%',
+
+            splitNumber: 10,
+            axisLine: {
+                lineStyle: {
+                    color: [
+                        [44 / 100, '#CF7839'],
+                        [1, "#CCCCCC"]
+                    ],
+                    width: 8
+                }
+            },
+            axisLabel: {
+                show: false,
+            },
+            axisTick: {
+                show: false,
+
+            },
+            splitLine: {
+                show: false,
+            },
+            itemStyle: {
+                show: false,
+            },
+            detail: {
+                formatter: function(value) {
+                    if (value !== 0) {
+                        var num = Math.round(value ) ;
+                        return parseInt(num).toFixed(0)+"%";
+                    } else {
+                        return 0;
+                    }
+                },
+                offsetCenter: [0, 46],
+                textStyle: {
+                    padding: [0, 0, 0, 0],
+                    fontSize: 18,
+                    fontWeight: '700',
+                    color: '#323232'
+                }
+            },
+            title: { //标题
+                show: true,
+                offsetCenter: [0, 77], // x, y，单位px
+                textStyle: {
+                    color: "#323232",
+                    fontSize: 14, //表盘上的标题文字大小
+                    fontWeight: 400,
+                    fontFamily: 'PingFangSC'
+                }
+            },
+            data: [{
+                name: "业务负载率",
+                value: 44,
+            }],
+            pointer: {
+                show: true,
+                length: '75%',
+                radius: '20%',
+                width: 10, //指针粗细
+            },
+            animationDuration: 4000,
+        },
+        {
+            name: '外部刻度',
+            type: 'gauge',
+            //  center: ['20%', '50%'],
+            radius: '50%',
+            min: 0, //最小刻度
+            max: 100, //最大刻度
+            splitNumber: 10, //刻度数量
+            startAngle: 225,
+            endAngle: -45,
+            axisLine: {
+                show: true,
+                lineStyle: {
+                    width: 1,
+                    color: [
+                        [1, 'rgba(0,0,0,0)']
+                    ]
+                }
+            }, //仪表盘轴线
+            axisLabel: {
+                show: true,
+                color: '#CCCCCC',
+                distance: 25,
+                formatter: function(v) {
+                    switch (v + '') {
+                        case '0':
+                            return '';
+                        case '10':
+                            return '';
+                        case '20':
+                            return '差';
+                        case '30':
+                            return '';
+                        case '40':
+                            return '中';
+                        case '50':
+                            return '';
+                        case '60':
+                            return '良';
+                        case '70':
+                            return '';
+                        case '80':
+                            return '优';
+                        case '90':
+                            return '';
+                        case '100':
+                            return '';
+                    }
+                }
+            }, //刻度标签。
+            axisTick: {
+                show: true,
+                splitNumber: 7,
+                lineStyle: {
+                    color: '#989898', //用颜色渐变函数不起作用
+                    width: 1,
+                },
+                length: -8
+            }, //刻度样式
+            splitLine: {
+                show: true,
+                length: -20,
+                lineStyle: {
+                    color: '#989898', //用颜色渐变函数不起作用
+                }
+            }, //分隔线样式
+            detail: {
+                show: false
+            },
+            pointer: {
+                show: false
+            }
+        },
+    ]
+};
+  
+if(option){
+myChart.setOption(option);
+}
+    </script>
+</body>
+</html>

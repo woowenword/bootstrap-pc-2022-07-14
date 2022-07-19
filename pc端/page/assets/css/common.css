@@ -1,0 +1,54 @@
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+body{
+  position: relative;
+  background-color: #F7F8FA;
+  font-family: PingFangSC-Regular;
+  font-size: 14px;
+  color: #323232;
+}
+:root {
+  scroll-behavior: smooth;
+}
+
+a {
+  color: var(--color-links);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-links-hover);
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-primary);
+}
+ol,ul{list-style:none;margin:0px;padding:0px;}
+
+i{
+  font-style: normal;
+}
+.color-F56C6C{
+  color: #F56C6C;
+}
+.color-0062b1{
+  color: #0062b1;
+}
+.color-0461AD{
+  color: #0461AD !important;
+}
+.color-F39800{
+  color: #F39800;
+}
+.btn-primary{
+  background-color: #0461AD;
+}
+
+/*--------------------------------------------------------------
+# Sections & Section Header
+--------------------------------------------------------------*/
+section {
+  overflow: hidden;
+}
