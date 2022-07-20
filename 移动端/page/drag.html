@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta content=”initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width” name=”viewport” />
+  <title>首页</title>
+  <!-- <link href="assets/img/favicon.ico" rel="icon"> -->
+
+  <link href="assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+  <link href="assets/css/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/css/Features-Clean.css" rel="stylesheet">
+  <style>
+    .col {
+      -ms-flex-preferred-size: 0;
+      flex-basis: 0;
+      -ms-flex-positive: 1;
+      flex-grow: 1;
+      max-width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="row">
+    <ul class="wrap" id="wrap-service-1">
+      <li>
+        <div>
+          <img src="assets/images/index/service1.png" />
+          <p>公出申请</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <!-- <div id="grid" class="row">
+    <h4 class="col-12">Grid布局例子</h4>
+    <div id="gridDemo" class="col">
+      <div class="grid-square">Item 1</div>
+
+      <div class="grid-square">Item 2</div>
+
+      <div class="grid-square">Item 3</div>
+
+      <div class="grid-square">Item 4</div>
+
+      <div class="grid-square">Item 5</div>
+
+      <div class="grid-square">Item 6</div>
+
+      <div class="grid-square">Item 7</div>
+
+      <div class="grid-square">Item 8</div>
+
+      <div class="grid-square">Item 9</div>
+
+      <div class="grid-square">Item 10</div>
+
+      <div class="grid-square">Item 11</div>
+
+      <div class="grid-square">Item 12</div>
+
+      <div class="grid-square">Item 13</div>
+
+      <div class="grid-square">Item 14</div>
+
+      <div class="grid-square">Item 15</div>
+
+      <div class="grid-square">Item 16</div>
+
+      <div class="grid-square">Item 17</div>
+
+      <div class="grid-square">Item 18</div>
+
+      <div class="grid-square">Item 19</div>
+
+      <div class="grid-square">Item 20</div>
+    </div> 
+  </div>-->
+  <script src="http://www.itxst.com/package/sortable/sortable.min.js"></script>
+  <script>
+    //数据渲染
+
+    let imgJsonArr1 = [
+      {num:1 , className: 'sscIcon ssc1', src: 'assets/images/index/service1.png',text: '出差申请'},
+      {num:2 , className: 'sscIcon ssc2', src: 'assets/images/index/service2.png',text: '出差申请'},
+      {num:3 , className: 'sscIcon ssc3', src: 'assets/images/index/service3.png',text: '出差申请'},
+      {num:4 , className: 'sscIcon ssc4', src: 'assets/images/index/service4.png',text: '出差申请'},
+    ]
+
+    let wrapServiceDom1 = document.getElementById('wrap-service-1');
+    let wrapServiceStr1 = '';
+    imgJsonArr1.forEach(item => {
+      wrapServiceStr1 += `<li class="${item.className}" index="${item.num}">
+        <div>
+          <img src="${item.src}" />
+          <p>${item.text}</p>
+        </div>
+      </li>`
+    })
+    wrapServiceDom1.innerHTML = wrapServiceStr1
+    
+    // 长按事件
+    let sscIconDomArr  = document.querySelectorAll('.sscIcon');
+    sscIconDomArr.forEach(dom => {
+      dom.ontouchstart= function(){
+
+      }
+    })
+
+
+
+
+
+
+    //获取对象
+    var el = document.getElementById('gridDemo');
+    new Sortable(el, {
+      swapThreshold: 1,
+      animation: 150,
+      direction: 'horizontal', // 拖拽方向 (默认情况下会自动判断方向)
+      sort: true, // boolean 定义是否列表单元是否可以在列表容器内进行拖拽排序
+    });
+  </script>
+</body>
+
+</html>

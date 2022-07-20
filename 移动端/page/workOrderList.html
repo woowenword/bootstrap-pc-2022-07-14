@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name=”viewport” content=”width=device-width, initial-scale=1,user-scalable=no, maximum-scale=1.0, minimum-scale=1.0” /> -->
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>工单列表页</title>
+  <!-- <link href="assets/img/favicon.ico" rel="icon"> -->
+
+  <link href="assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+  <link href="assets/css/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Template CSS File -->
+  <link href="assets/css/common.css" rel="stylesheet">
+  <link href="assets/css/workOrderList.css" rel="stylesheet">
+
+  <script>
+    document.documentElement.style.fontSize = document.documentElement.clientWidth / 750 + 'px';
+    window.addEventListener("resize", setRemSize, false);
+
+    function setRemSize() {
+      document.documentElement.style.fontSize = document.documentElement.clientWidth / 750 + 'px';
+    }
+  </script>
+</head>
+
+<body>
+  <div class="main">
+    <!-- 搜索框 -->
+    <section class="search-wrap">
+      <div class="container">
+
+        <form class="form-inline">
+          <div class="row">
+            <div class="left-search col-xs-11">
+              <div class="form-group">
+
+                <input class="form-control input-search" type="text" placeholder="搜索">
+              </div>
+            </div>
+            <div class="form-group">
+              <img class="right-icon" src="assets/images/workOrderList/right-icon.png" />
+            </div>
+
+          </div>
+
+      </div>
+      </form>
+  </div>
+  </section>
+
+  <section class="list-wrap">
+    <div class="container-fluid">
+      <ul class="row list-group">
+        <li class="list-group-item">
+          <span class="left-con">
+            <img class="icon" src="assets/images/workOrderList/icon.png" />
+          </span>
+          <span class="left-con">
+            我的待办工单
+          </span>
+          <span class="right-con pull-right">
+            <i>22</i>
+            <i class="bi bi-chevron-right"></i>
+          </span>
+        </li>
+
+        <li class="list-group-item">
+          <span class="left-con">
+            <img class="icon" src="assets/images/workOrderList/icon.png" />
+          </span>
+          <span class="left-con">
+            组内待分配工单
+          </span>
+          <span class="right-con pull-right">
+            <i>99</i>
+            <i class="bi bi-chevron-right"></i>
+          </span>
+        </li>
+
+        <li class="list-group-item">
+          <span class="left-con">
+            <img class="icon" src="assets/images/workOrderList/icon.png" />
+          </span>
+          <span class="left-con">
+            组内超时待分配工单
+          </span>
+          <span class="right-con pull-right">
+            <i>20</i>
+            <i class="bi bi-chevron-right"></i>
+          </span>
+        </li>
+
+        <li class="list-group-item">
+          <span class="left-con">
+            <img class="icon" src="assets/images/workOrderList/icon.png" />
+          </span>
+          <span class="left-con">
+            我发起的工单
+          </span>
+          <span class="right-con pull-right">
+            <i>7</i>
+            <i class="bi bi-chevron-right"></i>
+          </span>
+        </li>
+
+        <li class="list-group-item">
+          <span class="left-con">
+            <img class="icon" src="assets/images/workOrderList/icon.png" />
+          </span>
+          <span class="left-con">
+            我办理过完结的工单
+          </span>
+          <span class="right-con pull-right">
+            <i>156</i>
+            <i class="bi bi-chevron-right"></i>
+          </span>
+        </li>
+      </ul>
+    </div>
+  </section>
+  </div>
+
+</body>
+
+</html>

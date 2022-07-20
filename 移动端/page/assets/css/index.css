@@ -1,0 +1,21 @@
+@charset "UTF-8";
+/*--------------------------------------------------------------
+# work-order 工单状态
+--------------------------------------------------------------*/
+.work-order { margin: 30px 0; }
+
+.work-order .wrap { display: flex; }
+
+.work-order .wrap > div { flex: 1; color: #fff; padding: 30px; margin-right: 23px; }
+
+.work-order .wrap h5 { font-weight: normal; font-size: 14px; font-family: PingFang-SC-Bold; }
+
+.work-order .wrap p { font-weight: 500; font-size: 34px; font-family: HelveticaNeue-Bold; }
+
+.work-order .wrap .wrap-1 { background: url("../images/index/add-order.png") no-repeat center center; background-size: 100% 100%; }
+
+.work-order .wrap .wrap-2 { background: url("../images/index/end-order.png") no-repeat center center; background-size: 100% 100%; }
+
+.work-order .wrap .wrap-3 { background: url("../images/index/agency-order.png") no-repeat center center; background-size: 100% 100%; }
+
+.work-order .wrap .wrap-4 { background: url("../images/index/current-add-order.png") no-repeat center center; background-size: 100% 100%; }
