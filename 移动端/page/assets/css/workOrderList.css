@@ -1,23 +1,31 @@
 @charset "UTF-8";
+html, body { background-color: #F7F8FA; }
+
 /*--------------------------------------------------------------
 # search-wrap 工单状态
 --------------------------------------------------------------*/
+.search-wrap { background-color: #fff; }
+
 .search-wrap .form-inline { margin: 30rem 0; }
+
+.search-wrap .form-inline .left-search { margin-left: 18rem; }
 
 .search-wrap .form-inline .form-group { width: 100%; margin-bottom: 0; }
 
-.search-wrap .form-inline .form-group .input-search { height: 80rem; border-radius: 40rem; background-color: #F6F7F9; text-align: center; }
+.search-wrap .form-inline .form-group .input-search { height: 80rem; border-radius: 40rem; background-color: #F6F7F9; text-align: center; width: 100%; }
 
-.search-wrap .right-icon { width: 33rem; height: 33rem; margin-top: 20rem; }
+.search-wrap .right-icon { width: 33rem; height: 33rem; margin-top: 20rem; margin-left: 20rem; }
 
 /*--------------------------------------------------------------
 # list-wrap 工单状态
 --------------------------------------------------------------*/
 .list-wrap { box-sizing: border-box; }
 
+.list-wrap .list-group { margin-bottom: 0; }
+
 .list-wrap .list-group-item:first-child, .list-wrap .list-group-item:last-child { border-radius: 0; }
 
-.list-wrap li.list-group-item { border-left: 0px; border-right: 0px; font-size: 32rem; padding: 10px 12px; }
+.list-wrap li.list-group-item { width: 100%; box-sizing: border-box; height: 120rem; line-height: 120rem; display: inline-block; border-left: 0px; border-right: 0px; font-size: 32rem; padding: 0 30rem; }
 
 .list-wrap li > span { display: inline-block; vertical-align: middle; }
 
@@ -30,3 +38,5 @@
 .list-wrap span.right-con i:first-child { margin-right: 10rem; }
 
 .list-wrap img.icon { width: 50rem; height: 50rem; display: block; }
+
+@media (min-width: 768px) { body { max-width: 1164px; margin: 0 auto; } }
