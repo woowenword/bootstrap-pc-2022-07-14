@@ -56,7 +56,7 @@ section { margin: 30rem 0; }
 /*--------------------------------------------------------------
 # work-status 工单状态
 --------------------------------------------------------------*/
-.work-order .radio-wrap { position: relative; right: 5%; margin-top: 5%; }
+.work-order .radio-wrap { position: relative; right: 5%; margin-top: 10%; }
 
 /*--------------------------------------------------------------
 # work-status 工单状态
@@ -125,8 +125,6 @@ ul.row-one { margin-bottom: 40rem; }
 
 .ssc-serve li p { font-size: 28rem; }
 
-@media (min-width: 751px) { body { width: 640px; margin: 0 auto; } }
-
 /*--------------------------------------------------------------
 # daily-work 工单状态
 --------------------------------------------------------------*/
@@ -145,7 +143,8 @@ ul.row-one { margin-bottom: 40rem; }
 
 .serve-container .percent, .serve-container .bi-arrow-down { color: #F56C6C; font-size: 24rem; }
 
-@media (min-width: 751px) { #daily-week, #daily-month, #daily-year { width: 550rem; height: 360rem; }
+@media (min-width: 751px) { body { width: 640px; margin: 0 auto; }
+  #daily-week, #daily-month, #daily-year { width: 550rem; height: 360rem; }
   #pieChart { width: 550rem; height: 300rem; }
   #water-polo { width: 250rem; height: 300rem; } }
 

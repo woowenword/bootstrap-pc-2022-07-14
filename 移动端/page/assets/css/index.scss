@@ -159,7 +159,7 @@ section{
   .radio-wrap{
     position: relative;
     right: 5%;
-    margin-top: 5%;
+    margin-top: 10%;
   }
 }
 
@@ -304,13 +304,6 @@ ul.row-one{
   font-size: 28rem;
 }
 
-@media (min-width:751px){
-  body{
-    width: 640px;
-    margin: 0 auto;
-  }
-}
-
 /*--------------------------------------------------------------
 # daily-work 工单状态
 --------------------------------------------------------------*/
@@ -347,6 +340,10 @@ ul.row-one{
   font-size: 24rem;
 }
 @media (min-width: 751px){
+  body{
+    width: 640px;
+    margin: 0 auto;
+  }
   #daily-week,#daily-month,#daily-year{
     width:550rem;
     height:360rem;

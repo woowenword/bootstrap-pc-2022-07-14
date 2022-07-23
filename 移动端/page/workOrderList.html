@@ -16,11 +16,16 @@
   <link href="assets/css/workOrderList.css" rel="stylesheet">
 
   <script>
-    document.documentElement.style.fontSize = document.documentElement.clientWidth / 750 + 'px';
+    setRemSize();
     window.addEventListener("resize", setRemSize, false);
 
     function setRemSize() {
-      document.documentElement.style.fontSize = document.documentElement.clientWidth / 750 + 'px';
+      if(document.documentElement.clientWidth>751){
+        document.documentElement.style.fontSize = '1px';
+      }else{
+        document.documentElement.style.fontSize = document.documentElement.clientWidth / 750 + 'px';
+      }
+      
     }
   </script>
 </head>

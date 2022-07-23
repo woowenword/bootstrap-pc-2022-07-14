@@ -1,0 +1,91 @@
+$font-regular: 'PingFangSC-Regular';
+$font-medium: 'PingFangSC-Medium';
+$color-fff: #fff;
+$color-323232: #323232;
+$color-0062b1: #0062b1;
+
+html, body{
+  background-color: #F7F8FA;
+  color: $color-323232;
+}
+section{
+  margin: 30rem 0;
+}
+.container-box{
+  background-color: $color-fff;
+  padding: 40rem 30rem;
+  border-radius: 24rem;
+}
+.con-title{
+  position: relative;
+  margin-bottom: 40rem;
+  color: $color-323232;
+  font-size: 32rem;
+  font-family: $font-medium;
+}
+.con-title::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  border-right: 6rem solid #3678FF;
+  border-top-right-radius: 5rem;
+  border-bottom-right-radius: 5rem;
+  height: 100%;
+  margin-left: -30rem;
+}
+
+.main{
+  margin: 0 30rem;
+}
+/*--------------------------------------------------------------
+# search-wrap 工单状态
+--------------------------------------------------------------*/
+.search-wrap{
+  background-color: $color-fff;
+  .form-inline{
+    margin: 30rem;
+    .left-search{
+      margin-left: 18rem;
+    }
+    .form-group{
+      width: 100%;
+      margin-bottom: 0;
+      .input-search{
+        height: 80rem;
+        border-radius: 40rem;
+        background-color: #F6F7F9;
+        text-align: center;
+        width: 100%;
+      }
+    }
+  }
+}
+
+/*--------------------------------------------------------------
+# ssc-serve ssc服务
+--------------------------------------------------------------*/
+
+.ssc-serve > ul{
+  clear: both;
+  width: 100%;
+}
+.ssc-serve li {
+  float: left;
+  width: 25%;
+  text-align: center;
+  
+  &:nth-child(1),&:nth-child(2),&:nth-child(3),&:nth-child(4){
+    margin-bottom: 40rem;
+  }
+}
+.ssc-serve li:last-child{
+  margin-right: 0;
+}
+.ssc-serve li img{
+  width: 90rem;
+  height: 90rem;
+  margin-bottom: 24rem;
+}
+.ssc-serve li p{
+  font-size: 28rem;
+}
