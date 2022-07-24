@@ -39,4 +39,4 @@ html, body { background-color: #F7F8FA; }
 
 .list-wrap img.icon { width: 50rem; height: 50rem; display: block; }
 
-@media (min-width: 768px) { body { max-width: 1164px; margin: 0 auto; } }
+@media (min-width: 751px) { body { max-width: 640px; margin: 0 auto; } }

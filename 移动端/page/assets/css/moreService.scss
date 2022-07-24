@@ -11,6 +11,12 @@ html, body{
 section{
   margin: 30rem 0;
 }
+.none{
+  display: none;
+}
+.block{
+  display: inline-block;
+}
 .container-box{
   background-color: $color-fff;
   padding: 40rem 30rem;
@@ -37,10 +43,25 @@ section{
 .main{
   margin: 0 30rem;
 }
+.dialog{
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  background-color: #890;
+  opacity: 0.6;
+  pointer-events: auto;
+}
+
 /*--------------------------------------------------------------
 # search-wrap 工单状态
 --------------------------------------------------------------*/
 .search-wrap{
+  margin:0;
   background-color: $color-fff;
   .form-inline{
     margin: 30rem;
@@ -70,12 +91,28 @@ section{
   width: 100%;
 }
 .ssc-serve li {
+  // position: relative;
+  // z-index: 10;
   float: left;
   width: 25%;
   text-align: center;
   
   &:nth-child(1),&:nth-child(2),&:nth-child(3),&:nth-child(4){
     margin-bottom: 40rem;
+  }
+  i.bi-dash-circle-fill{
+    color: #CDCDCD;
+  }
+  i.bi-plus-circle-fill{
+    color: #0062B1;
+  }
+  .icon-position::before{
+    background: #fff;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    position:relative;
+    z-index: 11;
+    pointer-events: none;
   }
 }
 .ssc-serve li:last-child{
@@ -88,4 +125,74 @@ section{
 }
 .ssc-serve li p{
   font-size: 28rem;
+  font-family: $font-regular;
+}
+
+.shake {
+  -webkit-transform-origin: center center;
+  -webkit-animation-name: shake-rotate;
+  -webkit-animation-duration: 0.5s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+}
+@-webkit-keyframes shake-rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  12.5% {
+    -webkit-transform: rotate(1.25deg);
+  }
+  25% {
+    -webkit-transform: rotate(2.5deg);
+  }
+  37.5% {
+    -webkit-transform: rotate(1.25deg);
+  }
+  50% {
+    -webkit-transform: rotate(0deg);
+  }
+  62.5% {
+    -webkit-transform: rotate(-1.25deg);
+  }
+  75% {
+    -webkit-transform: rotate(-2.5deg);
+  }
+  87.5% {
+    -webkit-transform: rotate(-1.25deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+  }
+}
+@media (min-width: 751px){
+  body{
+    width: 640px;
+    margin: 0 auto;
+  }
+  .ssc-serve li .icon-position{
+    font-size: 22px;
+    &::before{
+      top: -8rem;
+      right: 15rem;
+    }
+  }
+}
+
+@media (min-width: 442px)  and (max-width: 750px){
+  .ssc-serve li .icon-position{
+    font-size: 22px;
+    &::before{
+      top: -6rem;
+      right: 26rem;
+    }
+  }
+}
+@media (min-width: 320px) and (max-width: 441px) {
+  .ssc-serve li .icon-position{
+    font-size: 15px;
+    &::before{
+      top: -8rem;
+      right: 19rem;
+    }
+  }
 }

@@ -1,3 +1,9 @@
+
+// 更多服务
+let seeMore = document.getElementById('more-service');
+seeMore.addEventListener('touchstart',function(){
+  window.location.href='moreService.html'
+})
 // 水球
 var waterPolo = echarts.init(document.getElementById('water-polo'));
 var waterOption = {
