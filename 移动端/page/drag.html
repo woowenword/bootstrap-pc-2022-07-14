@@ -218,7 +218,7 @@
           //   console.log(imgJsonArr1, 99999)
           //   renderHtml()
           // }
-        }, 5000)
+        }, 500)
       }
       dom.ontouchmove = function (event) {
           clearTimeout(timeOutEvent);
@@ -229,6 +229,7 @@
           clearTimeout(timeOutEvent);
           if (timeOutEvent != 0 && longClick == 0) { //点击
             //此处为点击事件----在此处添加跳转详情页
+            alert(1)
           }
           return false;
         }

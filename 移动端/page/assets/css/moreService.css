@@ -3,7 +3,7 @@ html, body { background-color: #F7F8FA; color: #323232; }
 
 section { margin: 30rem 0; }
 
-.none { display: none; }
+.none { visibility: hidden; }
 
 .block { display: inline-block; }
 

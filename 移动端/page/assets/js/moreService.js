@@ -1,40 +1,51 @@
 // ssc 常用服务入口
-let useFrequentlyArr = [];
+let useFrequentlyArr = [{}];
 let useFrequentlyUl = document.getElementById('use-frequently-ul');
-// let dialog = document.getElementById('dialog');
+let dialog = document.getElementById('dialog');
+// 定义添加动作的定时器
+let timeOutEvent = 0;
+let longClick = 0;
+// 定义删除动作的定时器
+let timeOutEventDel = null;
+let longClickDel = null;
 
-let timeOutEvent = null;
-let longClick = null;
+
+let sscIconDomPlusArr = document.querySelectorAll('press-img-plus');
+
+
 
 // ssc常用服务入口渲染
 function renderHtml() {
   let useFrequentlyStr = '';
 
-  useFrequentlyArr.forEach((item, index) => {
+  useFrequentlyArr.length> 0 && useFrequentlyArr.forEach((item, index) => {
     useFrequentlyStr += `<li class="press-img-del">
       <img src="${item.src}" />
-      <i class="bi bi-dash-circle-fill icon-position none" mark="${index}"></i>
+      <i class="bi bi-dash-circle-fill icon-position none" markdel="${index}"></i>
       <p>${item.text}</p>
     </li>`
   })
   useFrequentlyUl.innerHTML = useFrequentlyStr
 }
 
+
 // 组织人事
 let sscServeUl = document.getElementById('ssc-serve-ul');
+
 
 // 长按事件--显示添加按钮
 sscServeUl.addEventListener('touchstart',function(ev){
   let target = ev.target;
+  if(target.tagName === 'IMG'){ // 点击图片则会显示添加按钮
 
-  // if(target.tagName === 'IMG'){ // 点击图片则会显示添加按钮
-    longClick = 0; //设置初始为0
+    //开启定时器前，先清除定时器，防止重复触发
+    timeOutEvent && clearTimeout(timeOutEvent);
     timeOutEvent = setTimeout(function () {
-      //此处为长按事件-----在此显示遮罩层及删除按钮
+      //此处为长按事件-----在此显示遮罩层及按钮
       longClick = 1;
 
       // 显示遮照层
-      // showOrHidDialog('show');
+      showOrHidDialog('show');
 
       let elseLi = target.parentNode.parentNode.children;
       for (var i = 0, elseLil = elseLi.length; i < elseLil; i++) {
@@ -45,25 +56,62 @@ sscServeUl.addEventListener('touchstart',function(ev){
         }
       }
     }, 500)
-  // }
+    ev.preventDefault() // 阻止系统默认事件
+    return false; 
+  }else if(target.tagName === 'I'){
+    longClickDel == 0;
+    clearTimeout(timeOutEvent);
+    //此处为点击事件----在此处添加跳转详情页
+    console.log(useFrequentlyArr,5555)
+    // 如果useFrequentlyArr数组中已经存在某icon，则return
+    console.log(target.attributes.markplus.value,444444)
+    
+    useFrequentlyArr.push({
+      num: target.attributes.markplus.value,
+      src: target.parentNode.children[0].currentSrc,
+      text: target.parentNode.children[2].innerText
+    })
+    renderHtml()
+    console.log(useFrequentlyArr,66666)
+    
+  }else { // 点击其他地方
+    longClickDel == 0;
+    clearTimeout(timeOutEvent);
+    let elseLi;
+    if(target.className.indexOf('js-icon-wrap') > -1){ //点击的是父容器
+      elseLi = target.children;
+    }else{ 
+      elseLi = target.parentNode.parentNode.children;
+    }
+
+    for (var i = 0, elseLil = elseLi.length; i < elseLil; i++) {
+      if (elseLi[i].children[1]) {
+        elseLi[i].classList.remove('shake');
+        elseLi[i].children[1].classList.add('none');
+        elseLi[i].children[1].classList.remove('block');
+      }
+    }
+  }
 })
 
-
-// 长按事件--点击添加事件
+// 长按事件--点击添加事件---touchend 没触发这是为什么？
 sscServeUl.addEventListener('touchend',function(ev){
   let target = ev.target;
+  longClickDel == 0;
   clearTimeout(timeOutEvent);
+
   if(target.tagName === 'I'){ // 点击plus则添加,否则点击其他dom添加按钮消失
     if (timeOutEventDel != 0 && longClickDel == 0) { 
       //此处为点击事件----在此处添加跳转详情页
       useFrequentlyArr.push({
-        // num: index,
+        num: target.attributes.markplus.value,
         src: target.parentNode.children[0].currentSrc,
         text: target.parentNode.children[2].innerText
       })
       renderHtml()
     }
   }else {
+    
     let elseLi;
     
     if(target.className.indexOf('js-icon-wrap') > -1){ //点击的是父容器
@@ -80,85 +128,30 @@ sscServeUl.addEventListener('touchend',function(ev){
       }
     }
     // 隐藏遮照层
-    // showOrHidDialog('hide');
+    showOrHidDialog('hide');
   }
 })
 
 
-// // 长按添加事件--添加按钮
-// let sscIconDomPlusArr = document.querySelectorAll('.press-img-plus');
-// sscIconDomPlusArr.forEach((domEl)=>{
-//   domEl.addEventListener('touchend',function(ev){
-//     let target = ev.target;
-//     debugger
-//     if(target.tagName === 'I'){ //  只有点击添加按钮才会push到新数组中，否则点击其他dom添加按钮消失
-//       if (timeOutEventDel != 0 && longClickDel == 0) { //点击
-//         //此处为点击事件----在此处添加跳转详情页
-//         useFrequentlyArr.push({
-//           // num: index,
-//           src: target.parentNode.children[0].currentSrc,
-//           text: target.parentNode.children[2].innerText
-//         })
-//         renderHtml()
-//       }
-//     }
-//   })
-// })
+// 单击遮照层--按钮&样式消失
+dialog.addEventListener('touchend',function(ev){
+  let target = ev.target;
+  
+
+  target.classList.remove('block');
+  target.classList.add('none');
+
+  sscIconDomPlusArr.forEach(function(dom){
+    dom.classList.remove('shake');
+    dom.children[1].classList.add('none');
+    dom.children[1].classList.remove('block');
+  })
+
+})
 
 
-// 单击遮照层--按钮消失
-// dialog.addEventListener('touchend',function(ev){
-//   let target = ev.target;
-
-//   target.classList.remove('block');
-//   target.classList.add('none');
-
-//   sscIconDomPlusArr.forEach(function(dom){
-//     dom.classList.remove('shake');
-//     dom.children[1].classList.add('none');
-//     dom.children[1].classList.remove('block');
-//   })
-
-// })
-
-// 长按添加事件
-// let timeOutEvent = null;
-// let longClick = null;
-// sscIconDomPlusArr.forEach((dom, index) => {
-//   dom.ontouchstart = function () {
-//     // 无论长按哪一个dom，都会将加号icon展示出来
-//     longClick = 0; //设置初始为0
-//     timeOutEvent = setTimeout(function () {
-//       //此处为长按事件-----在此显示遮罩层及删除按钮
-//       longClick = 1;
-
-//       let elseLi = dom.parentNode.children;
-//       for (var i = 0, elseLil = elseLi.length; i < elseLil; i++) {
-//         if (elseLi[i].children[1]) {
-//           elseLi[i].children[1].classList.remove('none');
-//           elseLi[i].children[1].classList.add('block');
-//         }
-//       }
-//     }, 500)
-//   }
-//   dom.ontouchmove = function (event) {
-//     clearTimeout(timeOutEvent);
-//     timeOutEvent = 0;
-//     event.preventDefault();
-//   },
-//   dom.ontouchend = function () {
-//     clearTimeout(timeOutEvent);
-//     if (timeOutEvent != 0 && longClick == 0) { //点击
-//       //此处为点击事件----在此处添加跳转详情页
-//       renderPlusFun('plus')
-//     }
-//     return false;
-//   }
-// })
 
 
-let timeOutEventDel = null;
-let longClickDel = null;
 // 长按删除事件--显示删除按钮
 useFrequentlyUl.addEventListener('touchstart',function(ev){
   let target = ev.target;
@@ -171,6 +164,7 @@ useFrequentlyUl.addEventListener('touchstart',function(ev){
     let elseLi = target.parentNode.parentNode.children;
     for (var i = 0, elseLil = elseLi.length; i < elseLil; i++) {
       if (elseLi[i].children[1]) {
+        elseLi[i].classList.add('shake');
         elseLi[i].children[1].classList.remove('none');
         elseLi[i].children[1].classList.add('block');
       }
@@ -183,51 +177,36 @@ useFrequentlyUl.addEventListener('touchstart',function(ev){
 useFrequentlyUl.addEventListener('touchend',function(ev){
   let target = ev.target;
   clearTimeout(timeOutEventDel);
-  if (timeOutEventDel != 0 && longClickDel == 0) { //点击
-    //此处为点击事件----在此处添加跳转详情页
-    useFrequentlyArr.length>0 && useFrequentlyArr.forEach((item,index)=>{
-      if(item.num == target.attributes.mark.value){
-        useFrequentlyArr.splice(index, 1)
-        renderHtml()
-      }
-    })
-  }
-  return false;
-})
-
-
-function renderPlusFun(type) {
-  let blockArr;
-  if (type === 'plus') { //  添加
-    blockArr = document.querySelectorAll('.bi-plus-circle-fill.block');
-  } else { // 删除
-    blockArr = document.querySelectorAll('.bi-dash-circle-fill.block');
-  }
-
-  blockArr.forEach((el, index) => {
-    el.addEventListener('touchstart', function () {
-
-      if (type === 'plus') {
-        // 如果已经添加过该应用icon则不会在添加进去,否则push
-        if (false) {
-          return;
-        } else {
-          useFrequentlyArr.push({
-            num: index,
-            src: el.parentNode.children[0].currentSrc,
-            text: el.parentNode.children[2].innerText
-          })
+  if(target.tagName === 'I'){ // 点击的是删除按钮
+    if (timeOutEventDel != 0 && longClickDel == 0) { //点击
+      //此处为点击事件----在此处添加跳转详情页
+      useFrequentlyArr.length>0 && useFrequentlyArr.forEach((item,index)=>{
+        if(item.num == target.attributes.markdel.value){
+          useFrequentlyArr.splice(index, 1)
+          renderHtml()
         }
+      })
+    }
+    return false;
+  }else {
+    let elseLi;
+    
+    if(target.className.indexOf('js-icon-wrap') > -1){ //点击的是父容器
+      elseLi = target.children;
+    }else{ 
+      elseLi = target.parentNode.parentNode.children;
+    }
 
-      } else {
-        
+    for (var i = 0, elseLil = elseLi.length; i < elseLil; i++) {
+      if (elseLi[i].children[1]) {
+        elseLi[i].classList.remove('shake');
+        elseLi[i].children[1].classList.add('none');
+        elseLi[i].children[1].classList.remove('block');
       }
-      renderHtml()
-
-    })
-  })
-
-}
+    }
+  }
+  
+})
 
 function showOrHidDialog(type) {
   if(type === 'show'){

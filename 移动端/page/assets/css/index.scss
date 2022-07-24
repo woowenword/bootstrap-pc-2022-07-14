@@ -93,7 +93,7 @@ section{
 .main {
   position: relative;
   top: -70rem;
-  margin: 0 30rem;
+  margin: 0 30rem 80rem;
   .header{
     margin: 0;
     background: $color-fff;
@@ -339,6 +339,25 @@ ul.row-one{
 .serve-container .percent,.serve-container .bi-arrow-down{
   color: #F56C6C;
   font-size: 24rem;
+}
+.footer{
+  background: $color-fff;
+  li{
+    margin-top: 15rem;
+    margin-bottom: 13rem;
+    text-align: center;
+    font-family: $font-regular;
+    .active{
+      color: #0062b1;
+      font-family: $font-medium;
+    }
+  }
+  img{
+    width: 34rem;
+    height: 40rem;
+    margin-bottom: 10rem;
+  }
+
 }
 @media (min-width: 751px){
   body{
