@@ -12,7 +12,7 @@ section{
   margin: 30rem 0;
 }
 .none{
-  visibility: hidden;
+  display: none;
 }
 .block{
   display: inline-block;
@@ -91,8 +91,8 @@ section{
   width: 100%;
 }
 .ssc-serve li {
-  // position: relative;
-  // z-index: 10;
+  position: relative;
+  z-index: 10;
   float: left;
   width: 25%;
   text-align: center;
@@ -111,7 +111,6 @@ section{
     border: 1px solid #fff;
     border-radius: 50%;
     position:relative;
-    z-index: 11;
     pointer-events: none;
   }
 }
@@ -169,30 +168,23 @@ section{
     width: 640px;
     margin: 0 auto;
   }
-  .ssc-serve li .icon-position{
-    font-size: 22px;
-    &::before{
-      top: -8rem;
-      right: 15rem;
-    }
-  }
 }
 
 @media (min-width: 442px)  and (max-width: 750px){
   .ssc-serve li .icon-position{
     font-size: 22px;
-    &::before{
-      top: -6rem;
-      right: 26rem;
-    }
+    position: absolute;
+    top: -13rem;
+    right: 21rem;
+    background: red;
   }
 }
 @media (min-width: 320px) and (max-width: 441px) {
   .ssc-serve li .icon-position{
     font-size: 15px;
-    &::before{
-      top: -8rem;
-      right: 19rem;
-    }
+    position: absolute;
+    top: -13rem;
+    right: 19rem;
+    background: red;
   }
 }
