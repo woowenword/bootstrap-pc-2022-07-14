@@ -15,7 +15,7 @@ section { margin: 30rem 0; }
 
 .main { margin: 0 30rem; }
 
-.dialog { position: fixed; height: 100%; width: 100%; top: 0; left: 0; right: 0; bottom: 0; z-index: 1; background-color: #890; opacity: 0.6; pointer-events: auto; }
+.dialog { position: fixed; height: 100%; width: 100%; top: 0; left: 0; right: 0; bottom: 0; z-index: 1; background-color: #890; opacity: 0; pointer-events: auto; }
 
 /*--------------------------------------------------------------
 # search-wrap 工单状态
@@ -65,6 +65,6 @@ section { margin: 30rem 0; }
 
 @media (min-width: 751px) { body { width: 640px; margin: 0 auto; } }
 
-@media (min-width: 442px) and (max-width: 750px) { .ssc-serve li .icon-position { font-size: 22px; position: absolute; top: -13rem; right: 21rem; background: red; } }
+@media (min-width: 442px) and (max-width: 750px) { .ssc-serve li .icon-position { font-size: 22px; position: absolute; top: -13rem; right: 21rem; } }
 
-@media (min-width: 320px) and (max-width: 441px) { .ssc-serve li .icon-position { font-size: 15px; position: absolute; top: -13rem; right: 19rem; background: red; } }
+@media (min-width: 320px) and (max-width: 441px) { .ssc-serve li .icon-position { font-size: 15px; position: absolute; top: -13rem; right: 19rem; } }

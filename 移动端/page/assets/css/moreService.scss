@@ -53,7 +53,7 @@ section{
   bottom: 0;
   z-index: 1;
   background-color: #890;
-  opacity: 0.6;
+  opacity: 0;
   pointer-events: auto;
 }
 
@@ -176,7 +176,7 @@ section{
     position: absolute;
     top: -13rem;
     right: 21rem;
-    background: red;
+    // background: red;
   }
 }
 @media (min-width: 320px) and (max-width: 441px) {
@@ -185,6 +185,6 @@ section{
     position: absolute;
     top: -13rem;
     right: 19rem;
-    background: red;
+    // background: red;
   }
 }
