@@ -128,3 +128,11 @@ a:hover {
   clear: both;
   visibility: hidden;
 }
+
+.footer { background: #fff; }
+
+.footer li { margin-top: 15rem; margin-bottom: 13rem; text-align: center; font-family: "PingFangSC-Regular"; }
+
+.footer li .active { color: #0062b1; font-family: "PingFangSC-Medium"; }
+
+.footer img { width: 34rem; height: 40rem; margin-bottom: 10rem; }

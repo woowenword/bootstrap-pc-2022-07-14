@@ -340,25 +340,7 @@ ul.row-one{
   color: #F56C6C;
   font-size: 24rem;
 }
-.footer{
-  background: $color-fff;
-  li{
-    margin-top: 15rem;
-    margin-bottom: 13rem;
-    text-align: center;
-    font-family: $font-regular;
-    .active{
-      color: #0062b1;
-      font-family: $font-medium;
-    }
-  }
-  img{
-    width: 34rem;
-    height: 40rem;
-    margin-bottom: 10rem;
-  }
 
-}
 @media (min-width: 751px){
   body{
     width: 640px;
