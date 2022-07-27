@@ -9,9 +9,11 @@ body { background: #F7F8FA; box-sizing: border-box; padding-bottom: 98rem; }
 
 .main .search span { display: block; width: 30rem; height: 24rem; background: url("./../images/icon.png") no-repeat center center; background-size: 100% 100%; }
 
-.main .tab { width: 100%; height: 58rem; box-sizing: border-box; padding: 0 30rem; background: #ffffff; overflow-x: scroll; white-space: nowrap; overflow-y: hidden; /* 隐藏滚动条 */ scrollbar-width: none; /* firefox */ -ms-overflow-style: none; /* IE 10+ */ }
+.main .tab { width: 100%; height: 58rem; background: #ffffff; }
 
-.main .tab::-webkit-scrollbar { display: none; /* Chrome Safari */ }
+.main .tab .main-content { width: 690rem; height: 58rem; margin: 0 auto; overflow-x: scroll; white-space: nowrap; overflow-y: hidden; /* 隐藏滚动条 */ scrollbar-width: none; /* firefox */ -ms-overflow-style: none; /* IE 10+ */ }
+
+.main .tab .main-content::-webkit-scrollbar { display: none; /* Chrome Safari */ }
 
 .main .tab ul { width: 100%; height: 100%; position: relative; }
 

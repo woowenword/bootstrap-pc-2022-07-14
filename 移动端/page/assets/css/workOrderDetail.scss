@@ -400,7 +400,8 @@ body {
                         width: 100%;
                         height: 24rem;
                         border-radius: 50%;
-                        background: red;
+                        background: url("./../images/icon-4.png") no-repeat center center;
+                        background-size: 100% 100%;
                         position: absolute;
                         top: 0;
                         z-index: 9;
@@ -467,15 +468,23 @@ body {
                                 display: inline-block;
                                 width: 28rem;
                                 height: 28rem;
-                                background-color: red;
                                 vertical-align: bottom;
                                 margin-right: 20rem;
 
-                                &.i-one {}
+                                &.i-one {
+                                    background: url("./../images/icon-1.png") no-repeat center center;
+                                    background-size: 100% 100%;
+                                }
 
-                                &.i-one {}
+                                &.i-two {
+                                    background: url("./../images/icon-2.png") no-repeat center center;
+                                    background-size: 100% 100%;
+                                }
 
-                                &.i-one {}
+                                &.i-three {
+                                    background: url("./../images/icon-3.png") no-repeat center center;
+                                    background-size: 100% 100%;
+                                }
                             }
                         }
 
@@ -511,10 +520,15 @@ body {
                 position: relative;
 
                 span{
+                    display: inline-block;
+                    width: 20rem;
+                    height: 10rem;
                     position: absolute;
-                    top: 0;
+                    top: 50%;
                     left: 50%;
-                    transform: translateX(-50%);
+                    transform: translate(-50%, -50%);
+                    background: url("./../images/icon-5.png") no-repeat center center;
+                    background-size: 100% 100%;
                 }
             }
 
@@ -550,8 +564,9 @@ body {
         background: url("./../images/btn-tool.png") no-repeat center center;
         background-size: 100% 100%;
         position: fixed;
-        right: 22rem;
+        right: 0;
         bottom: 220rem;
+        z-index: 99;
 
         ul {
             width: auto;

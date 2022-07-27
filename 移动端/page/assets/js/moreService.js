@@ -14,9 +14,9 @@ function renderHtml() {
   let useFrequentlyStr = '';
 
   useFrequentlyArr.length > 0 && useFrequentlyArr.forEach((item, index) => {
-    useFrequentlyStr += `<li class="press-img">
+    useFrequentlyStr += `<li class="press-img press-img-del">
       <img src="${item.src}" />
-      <i class="bi bi-dash-circle-fill icon-position none" markdel="${item.num}"></i>
+      <i class="bi bi-dash-circle-fill icon-position none" data-id="${item.num}"></i>
       <p>${item.text}</p>
     </li>`
   })
@@ -124,7 +124,7 @@ useFrequentlyUl.addEventListener('touchstart', function (ev) {
     if (target.tagName === 'I') {
       if (useFrequentlyArr.length > 1) {
         useFrequentlyArr.some((item, index) => {
-          if (item.num == target.attributes.markdel.value) {
+          if (item.num == target.attributes['data-id'].value) {
             useFrequentlyArr.splice(index, 1)
           }
         })
@@ -189,29 +189,46 @@ function showOrHidDialog(type) {
 }
 
 // 拖拽事件
-new Sortable(useFrequentlyUl, {
-  swapThreshold: 1,
-  animation: 150,
-  direction: 'horizontal', // 拖拽方向 (默认情况下会自动判断方向)
-  sort: true, // boolean 定义是否列表单元是否可以在列表容器内进行拖拽排序
-});
+// new Sortable(useFrequentlyUl, {
+//   swapThreshold: 1,
+//   animation: 1000,
+//   direction: 'horizontal', // 拖拽方向 (默认情况下会自动判断方向)
+//   sort: true, // boolean 定义是否列表单元是否可以在列表容器内进行拖拽排序
+// });
 // 拖拽以后，需要将新拖拽后数据赋值给useFrequentlyArr，在重新渲染
 
 // //设置配置
-// var option = {
-//   animation: 1000,
-//   // draggable: ".item",
-//   // direction: 'vertical',
-//   // forceFallback: true,
-//   // group: 'itxst.com',
-//   //拖动结束
-//   onEnd: function (evt) {
-//     console.log(evt);
-//     //获取拖动后的排序
-//     var arr = sortable2.toArray();
-//     // document.getElementById("msg1").innerHTML = "A组排序结果：" + JSON.stringify(sortable1.toArray());
-//     document.getElementById("msg2").innerHTML = "B组排序结果：" + JSON.stringify(sortable2.toArray());
-//   },
-// };
-// //初始化
-// var sortable2 = Sortable.create(useFrequentlyUl, option);
+var option = {
+  animation: 1000,
+  draggable: ".press-img-del",
+  direction: 'horizontal',
+  forceFallback: true,
+  group: 'itxst.com',
+  //拖动结束
+  onEnd: function (evt) {
+    console.log(evt);
+    console.log(evt.oldIndex) // 当前行的被拖拽前的顺序
+	  console.log(evt.newIndex) // 当前行的被拖拽后的顺序
+    console.log(useFrequentlyArr,77777)
+    const currRow = useFrequentlyArr.splice(evt.oldIndex, 1)[0]
+	  useFrequentlyArr.splice(evt.newIndex, 0, currRow)
+    console.log(useFrequentlyArr,8888888)
+    const newData = []
+    useFrequentlyArr.forEach((item, index) => {
+      newData[index] = {
+        id: item.num,
+        src: item.src,
+        text: item.text
+        // rank: index + 1
+      }
+    })
+    console.log(newData,999999)
+    renderHtml()
+    //获取拖动后的排序
+    // var arr = sortable2.toArray();
+    // document.getElementById("msg1").innerHTML = "A组排序结果：" + JSON.stringify(sortable1.toArray());
+    document.getElementById("msg2").innerHTML = "B组排序结果：" + JSON.stringify(sortable2.toArray());
+  },
+};
+//初始化
+var sortable2 = Sortable.create(useFrequentlyUl, option);

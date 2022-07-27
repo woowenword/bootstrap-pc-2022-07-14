@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>sortable.js onEnd事件例子</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui">
+    <script src="https://www.itxst.com/package/sortable/sortable.min.js"></script>
+    <style>
+       .itxst {
+            margin: 10px;
+            width: 40%; 
+            float: left;
+            margin-right: 10px;
+        } 
+       .itxst div {
+                padding: 6px;
+                background-color: #d39898;
+                border: solid 1px #eee;
+                margin-bottom: 10px;
+                cursor: move;  
+      }
+      .msg{
+     clear:both; 
+      }
+    </style>
+</head>
+<body>
+  <span>onEnd事件例子</span>
+  <div>
+    <div id="g1" class="itxst">
+        <div class="item" data-id="a1">item a1</div>
+        <div class="item" data-id="a2">item a2</div>
+        <div class="item" data-id="a3">item a3</div>
+    </div>
+      <div id="g2" class="itxst">
+        <div class="item" data-id="b1">item b1</div>
+        <div class="item" data-id="b2">item b2</div>
+        <div class="item" data-id="b3">item b3</div>
+    </div>
+  </div>
+   <div id="msg1" class="msg"></div>
+   <div id="msg2" class="msg"></div>
+    <script>
+        //获取对象
+        var el = document.getElementById('g1');
+        //设置配置
+        var ops1 = {
+            animation: 1000,
+            draggable: ".item",
+            direction: 'vertical', 
+            group:'itxst.com',
+            forceFallback:true,
+            //*************** 开始拖拽的事件 ***************
+            onStart: function (evt) {  
+                  // console.log(evt);
+                   var index=evt.oldIndex;  
+                   document.getElementById("msg1").innerHTML ="开始拖拽第"+index+"个元素"
+             },
+            //取消选中的事件
+             onUnchoose: function (evt) {  
+                   //console.log(evt);
+                   var index=evt.oldIndex;  
+                   document.getElementById("msg1").innerHTML ="取消选中的第"+index+"个元素"
+              },
+          //选中回调函数
+           onChoose: function (evt) {  
+                 //console.log(evt);
+                 var index=evt.oldIndex;  
+                 document.getElementById("msg1").innerHTML ="你选中了第"+index+"个元素"
+            },
+            //拖动结束
+            onEnd: function (evt) {
+                console.log(evt);
+                //获取拖动后的排序
+               document.getElementById("msg1").innerHTML = "A组排序结果：" + JSON.stringify(sortable1.toArray());
+               document.getElementById("msg2").innerHTML = "B组排序结果：" + JSON.stringify(sortable2.toArray());
+            },
+        };
+        //初始化
+        var sortable1 = Sortable.create(el, ops1);
+      /******************** B组 ************************/
+        //获取对象
+        var e2 = document.getElementById('g2');
+        //设置配置
+        var ops2 = {
+            animation: 1000,
+            draggable: ".item",
+            direction: 'vertical', 
+            forceFallback:true, 
+            group:'itxst.com',
+            //拖动结束
+            onEnd: function (evt) {
+                console.log(evt);
+                //获取拖动后的排序
+                var arr = sortable2.toArray();
+                document.getElementById("msg1").innerHTML = "A组排序结果：" + JSON.stringify(sortable1.toArray());
+               document.getElementById("msg2").innerHTML = "B组排序结果：" + JSON.stringify(sortable2.toArray());
+            },
+        };
+        //初始化
+        var sortable2 = Sortable.create(e2, ops2);
+    </script>
+</body>
+</html>

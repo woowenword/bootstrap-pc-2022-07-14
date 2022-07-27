@@ -5,7 +5,7 @@ $(function () {
         ulWidth += ($(ulLiLength[i]).width() + Number($(ulLiLength[i]).css("marginRight").replace('px', '')))
         console.log(ulWidth)
     }
-    $(".tab ul").width(ulWidth)
+    $(".tab ul").width(ulWidth + ulLiLength.length)
 
     var liOneOffsetLeft = $(".tab ul li:first").offset().left + $(".tab ul li:first").width();
     var offsetValue = ($(".tab ul li:nth-child(2)").offset().left - liOneOffsetLeft) / 2;
