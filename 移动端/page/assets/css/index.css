@@ -143,8 +143,7 @@ ul.row-one { margin-bottom: 40rem; }
 
 .serve-container .percent, .serve-container .bi-arrow-down { color: #F56C6C; font-size: 24rem; }
 
-@media (min-width: 751px) { body { width: 640px; margin: 0 auto; }
-  #daily-week, #daily-month, #daily-year { width: 550rem; height: 360rem; }
+@media (min-width: 751px) { #daily-week, #daily-month, #daily-year { width: 550rem; height: 360rem; }
   #pieChart { width: 550rem; height: 300rem; }
   #water-polo { width: 250rem; height: 300rem; } }
 

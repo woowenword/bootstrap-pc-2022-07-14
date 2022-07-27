@@ -28,7 +28,9 @@ section { margin: 30rem 0; }
 
 .search-wrap .form-inline .form-group { width: 100%; margin-bottom: 0; }
 
-.search-wrap .form-inline .form-group .input-search { height: 80rem; border-radius: 40rem; background-color: #F6F7F9; text-align: center; width: 100%; }
+.search-wrap .form-inline .form-group .input-search { height: 80rem; border-radius: 40rem; background-color: #F6F7F9; width: 100%; font-size: 32rem; font-family: PingFangSC-Regular; }
+
+.search-wrap .form-inline .form-group input::-webkit-input-placeholder { text-align: center; font-size: 32rem; color: #C3C5C9; }
 
 /*--------------------------------------------------------------
 # ssc-serve ssc服务
@@ -62,8 +64,6 @@ section { margin: 30rem 0; }
   75% { -webkit-transform: rotate(-2.5deg); }
   87.5% { -webkit-transform: rotate(-1.25deg); }
   100% { -webkit-transform: rotate(0deg); } }
-
-@media (min-width: 751px) { body { width: 640px; margin: 0 auto; } }
 
 @media (min-width: 442px) and (max-width: 750px) { .ssc-serve li .icon-position { font-size: 22px; position: absolute; top: -13rem; right: 21rem; } }
 

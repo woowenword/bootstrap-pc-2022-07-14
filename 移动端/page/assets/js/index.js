@@ -1,9 +1,24 @@
+let home = document.getElementById('home');
+let work = document.getElementById('work');
+let message = document.getElementById('message');
+
+// 工单
+work.addEventListener('touchstart',function(){
+  window.location.href='workOrderList.html'
+})
+
+// 消息--暂时跳转为工单详情页
+message.addEventListener('touchstart',function(){
+  window.location.href='workOrderDetail.html'
+})
+
 
 // 更多服务
 let seeMore = document.getElementById('more-service');
 seeMore.addEventListener('touchstart',function(){
   window.location.href='moreService.html'
 })
+
 // 水球
 var waterPolo = echarts.init(document.getElementById('water-polo'));
 var waterOption = {

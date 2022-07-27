@@ -136,3 +136,19 @@ a:hover {
 .footer li .active { color: #0062b1; font-family: "PingFangSC-Medium"; }
 
 .footer img { width: 34rem; height: 40rem; margin-bottom: 10rem; }
+
+.form-control{
+  border: 1px solid #F6F7F9;
+  box-shadow: none;
+}
+.form-control:focus{
+  border-color: transparent !important;
+  box-shadow: none;
+}
+
+@media (min-width: 751px){
+  body{
+    width: 640px;
+    margin: 0 auto;
+  }
+}

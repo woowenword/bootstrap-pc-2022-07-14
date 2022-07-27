@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>工单列表页</title>
+  <title>工单列表</title>
   <!-- <link href="assets/img/favicon.ico" rel="icon"> -->
 
   <link href="assets/css/bootstrap/bootstrap.css" rel="stylesheet">
@@ -34,23 +34,8 @@
   <div class="main">
     <!-- 搜索框 -->
     <section class="search-wrap">
-      <div class="container-fluid">
-
-        <form class="form-inline">
-          <div class="row">
-            <div class="left-search col-xs-10">
-              <div class="form-group">
-                <input class="form-control input-search" type="text" placeholder="搜索">
-              </div>
-            </div>
-            <div class="col-xs-1">
-              <div class="form-group">
-                <img class="right-icon" src="assets/images/workOrderList/right-icon.png" />
-              </div>
-            </div>
-          </div>
-        </form> 
-      </div>
+      <input type="text" placeholder="搜索">
+      <span id="workOrder"></span>
     </section>
 
     <section class="list-wrap">
@@ -127,21 +112,34 @@
   <footer class="footer navbar-fixed-bottom">
     <div class="container-fluid">
       <ul class="row">
-        <li class="col-xs-4 col-md-4">
+        <li class="col-xs-4 col-md-4" id="home">
           <img class="img-c" src="assets/images/common/icon1.png"/>
           <p>首页</p>
         </li>
-        <li class="col-xs-4 col-md-4">
+        <li class="col-xs-4 col-md-4" id="work">
           <img src="assets/images/common/icon2-checked.png"/>
           <p class="active">工单</p>
         </li>
-        <li class="col-xs-4 col-md-4">
+        <li class="col-xs-4 col-md-4" id="message">
           <img src="assets/images/common/icon3.png"/>
           <p class="">消息</p>
         </li>
       </ul>
     </div>
   </footer>
-</body>
+  <script>
+    let home = document.getElementById('home');
+    let workOrder = document.getElementById('workOrder');
+    let message = document.getElementById('message');
 
+    // 首页
+    home.addEventListener('touchstart',function(){
+      window.location.href='index.html'
+    })
+    //  工单
+    workOrder.addEventListener('touchstart',function(){
+      window.location.href='workOrder.html'
+    })
+  </script>
+</body>
 </html>

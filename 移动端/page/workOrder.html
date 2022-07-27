@@ -7,15 +7,25 @@
     <meta name="viewport"
         content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <!-- <link href="assets/img/favicon.ico" rel="icon"> -->
+    <title>工单</title>
+    
+    <link href="assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Template CSS File -->
     <link rel="stylesheet" href="assets/css/common.css">
     <link rel="stylesheet" href="assets/css/workOrder.css">
     <script>
-        document.documentElement.style.fontSize = document.documentElement.clientWidth / 750 + 'px';
+        setRemSize();
         window.addEventListener("resize", setRemSize, false);
+
         function setRemSize() {
-            document.documentElement.style.fontSize = document.documentElement.clientWidth / 750 + 'px';
+            if (document.documentElement.clientWidth > 751) {
+                document.documentElement.style.fontSize = '1px';
+            } else {
+                document.documentElement.style.fontSize = document.documentElement.clientWidth / 750 + 'px';
+            }
+
         }
     </script>
 </head>
@@ -25,7 +35,7 @@
         <!-- search -->
         <section class="search">
             <input type="text" placeholder="搜索">
-            <span></span>
+            <span id="workOderList"></span>
         </section>
         <!-- tab切换 -->
         <section class="tab">
@@ -109,6 +119,25 @@
             </ul>
         </section>
     </div>
+    <footer class="footer navbar-fixed-bottom">
+        <div class="container-fluid">
+            <ul class="row">
+                <li class="col-xs-4 col-md-4" id="home">
+                    <img class="img-c" src="assets/images/common/icon1.png" />
+                    <p class="">首页</p>
+                </li>
+                <li class="col-xs-4 col-md-4" id="work">
+                    <img src="assets/images/common/icon2-checked.png" />
+                    <p class="active">工单</p>
+                </li>
+                <li class="col-xs-4 col-md-4" id="message">
+                    <img src="assets/images/common/icon3.png" />
+                    <p class="">消息</p>
+                </li>
+            </ul>
+        </div>
+
+    </footer>
     <script src="assets/js/jquery.js" type="text/javascript"></script>
     <script src="assets/js/bootstrap.js" type="text/javascript"></script>
     <script src="assets/js/workOrder.js" type="text/javascript"></script>

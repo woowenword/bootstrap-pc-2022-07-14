@@ -5,34 +5,41 @@ html, body{
 /*--------------------------------------------------------------
 # search-wrap 工单状态
 --------------------------------------------------------------*/
-.search-wrap{
-  background-color: #fff;
-  .form-inline{
-    margin: 30rem 0;
-    .left-search{
-      margin-left: 18rem;
-    }
-    .form-group{
-      width: 100%;
-      margin-bottom: 0;
-      .input-search{
-        height: 80rem;
-        border-radius: 40rem;
-        background-color: #F6F7F9;
-        text-align: center;
-        width: 100%;
-      }
-    }
+.search-wrap {
+  display: flex;
+  box-sizing: border-box;
+  background: #ffffff;
+  padding: 30rem 30rem;
+  justify-content: space-between;
+  align-items: center;
+
+  input {
+      width: 622rem;
+      height: 80rem;
+      background: #F6F7F9;
+      border-radius: 40rem;
+      border: none;
+      outline: none;
+      box-sizing: border-box;
+      padding: 0 20rem;
+      font-size: 32rem;
+      font-family: PingFangSC-Regular;
   }
-  .right-icon{
-    width: 33rem;
-    height: 33rem;
-    margin-top: 20rem;
-    margin-left: 20rem;
+
+  input::-webkit-input-placeholder {
+      text-align: center;
+      font-size: 32rem;
+      color: #C3C5C9;
+  }
+
+  span {
+      display: block;
+      width: 33rem;
+      height: 33rem;
+      background: url("./../images/workOrderList/right-icon.png") no-repeat center center;
+      background-size: 100% 100%;
   }
 }
-
-
 
 /*--------------------------------------------------------------
 # list-wrap 工单状态
@@ -80,13 +87,5 @@ html, body{
     width: 50rem;
     height: 50rem;
     display: block;
-  }
-}
-
-@media (min-width: 751px) {
-  body{
-    max-width: 640px;
-    margin: 0 auto;
-    
   }
 }

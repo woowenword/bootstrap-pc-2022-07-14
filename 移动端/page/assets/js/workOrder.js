@@ -1,4 +1,10 @@
 $(function () {
+    $('#workOderList').click(function(){
+        window.location.href = 'workOrderList.html'
+    })
+    $('#home').click(function(){
+        window.location.href = 'index.html'
+    })
     var ulLiLength = $(".tab ul li");
     var ulWidth = 0;
     for(var i = 0; i < ulLiLength.length; i++){

@@ -22,10 +22,14 @@ body {
             outline: none;
             box-sizing: border-box;
             padding: 0 20rem;
+            font-size: 32rem;
+            font-family: PingFangSC-Regular;
         }
 
         input::-webkit-input-placeholder {
             text-align: center;
+            font-size: 32rem;
+            color: #C3C5C9;
         }
 
         span {

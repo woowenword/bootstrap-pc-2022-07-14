@@ -75,8 +75,14 @@ section{
         height: 80rem;
         border-radius: 40rem;
         background-color: #F6F7F9;
-        text-align: center;
         width: 100%;
+        font-size: 32rem;
+        font-family: PingFangSC-Regular;
+      }
+      input::-webkit-input-placeholder {
+        text-align: center;
+        font-size: 32rem;
+        color: #C3C5C9;
       }
     }
   }
@@ -161,12 +167,6 @@ section{
   }
   100% {
     -webkit-transform: rotate(0deg);
-  }
-}
-@media (min-width: 751px){
-  body{
-    width: 640px;
-    margin: 0 auto;
   }
 }
 

@@ -4,17 +4,25 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <!-- <link href="assets/img/favicon.ico" rel="icon"> -->
-
+    <title>工单详情</title>
+    
     <!-- Template CSS File -->
     <link rel="stylesheet" href="assets/css/common.css">
     <link rel="stylesheet" href="assets/css/workOrderDetail.css">
     <script>
-        document.documentElement.style.fontSize = document.documentElement.clientWidth / 750 + 'px';
+        setRemSize();
         window.addEventListener("resize", setRemSize, false);
+
         function setRemSize() {
-            document.documentElement.style.fontSize = document.documentElement.clientWidth / 750 + 'px';
+            if (document.documentElement.clientWidth > 751) {
+                document.documentElement.style.fontSize = '1px';
+            } else {
+                document.documentElement.style.fontSize = document.documentElement.clientWidth / 750 + 'px';
+            }
+
         }
     </script>
 </head>
