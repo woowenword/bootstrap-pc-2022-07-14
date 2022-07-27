@@ -101,9 +101,7 @@ dialog.addEventListener('touchend', function (ev) {
 })
 
 
-
-
-// 删除动作：第一步：长按图片--显示删除按钮
+// 删除动作：长按图片--显示删除按钮
 useFrequentlyUl.addEventListener('touchstart', function (ev) {
   let target = ev.target;
   if (target.tagName === 'IMG') { // 点击图片则会显示添加按钮
@@ -142,6 +140,7 @@ useFrequentlyUl.addEventListener('touchstart', function (ev) {
   }
 })
 
+// 移动元素--拖拽的时候
 useFrequentlyUl.addEventListener('touchmove', function (ev) {
   clearTimeout(timeOutEventDel);
 })
@@ -188,16 +187,7 @@ function showOrHidDialog(type) {
   }
 }
 
-// 拖拽事件
-// new Sortable(useFrequentlyUl, {
-//   swapThreshold: 1,
-//   animation: 1000,
-//   direction: 'horizontal', // 拖拽方向 (默认情况下会自动判断方向)
-//   sort: true, // boolean 定义是否列表单元是否可以在列表容器内进行拖拽排序
-// });
-// 拖拽以后，需要将新拖拽后数据赋值给useFrequentlyArr，在重新渲染
-
-// //设置配置
+//拖拽事件
 var option = {
   animation: 1000,
   draggable: ".press-img-del",
@@ -216,18 +206,13 @@ var option = {
     const newData = []
     useFrequentlyArr.forEach((item, index) => {
       newData[index] = {
-        id: item.num,
+        num: item.num,
         src: item.src,
         text: item.text
-        // rank: index + 1
       }
     })
     console.log(newData,999999)
     renderHtml()
-    //获取拖动后的排序
-    // var arr = sortable2.toArray();
-    // document.getElementById("msg1").innerHTML = "A组排序结果：" + JSON.stringify(sortable1.toArray());
-    document.getElementById("msg2").innerHTML = "B组排序结果：" + JSON.stringify(sortable2.toArray());
   },
 };
 //初始化
