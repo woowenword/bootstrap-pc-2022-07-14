@@ -131,8 +131,22 @@ a:hover {
 
 .footer { background: #fff; }
 
-.footer li { margin-top: 15rem; margin-bottom: 13rem; text-align: center; font-family: "PingFangSC-Regular"; }
+.footer li { position:relative;margin-top: 15rem; margin-bottom: 13rem; text-align: center; font-family: "PingFangSC-Regular"; }
 
+.footer li .red{
+  position: absolute;
+    top: -8rem;
+    right: 77rem;
+  background-color: #F56C6C;
+  color: #fff;
+  display: inline-block;
+  width: 40rem;
+  height: 34rem;
+  line-height: 34rem;
+  text-align: center;
+  border-radius: 17px;
+}
+.footer li .message-wrap
 .footer li .active { color: #0062b1; font-family: "PingFangSC-Medium"; }
 
 .footer img { width: 34rem; height: 40rem; margin-bottom: 10rem; }
